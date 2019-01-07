@@ -1,16 +1,18 @@
+# iOS配网SDK（AliOS GitHub）
+
 ## 概述
 提供了把 WiFi 设备配置上家庭路由器以及局域网内已联网设备的发现能力，具体方案包括一键广播配网、手机热点配网、智能路由器配网以及设备间相互配网等。
 
 | 依赖SDK | 概述 |
 | :--- | :--- |
-| [日志](https://g.alicdn.com/aic/ilop-docs/2018.10.31/mobile-ios-sdk-log.html) | 基础依赖SDK，提供客户端统一日志打印，日志等级控制，分模块日志隔离等能力 |
-| [API 通道](https://g.alicdn.com/aic/ilop-docs/2018.10.31/mobile-ios-sdk-apiclient.html) | 提供API通道能力，和基础环境配置信息 |
-| [Breeze SDK](https://g.alicdn.com/aic/ilop-docs/2018.10.31/mobile-ios-sdk-ble.html) | 提供蓝牙辅助配网支持 |
+| [日志](https://lark.alipay.com/ilopdoc/guide/mobile-ios-sdk-log) | 基础依赖SDK，提供客户端统一日志打印，日志等级控制，分模块日志隔离等能力 |
+| [API 通道](https://lark.alipay.com/ilopdoc/guide/mobile-ios-sdk-apiclient) | 提供API通道能力，和基础环境配置信息 |
+| [Breeze SDK]() | 	提供蓝牙辅助配网支持 |
 
 
 ## 初始化
 
-配网SDK 的初始化依赖 API 通道的初始化，请参见：[API 通道 - 初始化](https://g.alicdn.com/aic/ilop-docs/2018.10.31/mobile-ios-sdk-apiclient.html#%E5%88%9D%E5%A7%8B%E5%8C%96)
+配网SDK 的初始化依赖 API 通道的初始化，请参见：[API 通道 - 初始化](https://lark.alipay.com/ilopdoc/guide/mobile-ios-sdk-apiclient#%E5%88%9D%E5%A7%8B%E5%8C%96)
 
 ## 使用说明
 
@@ -71,17 +73,16 @@ IMLCandDeviceModel *model = self.localDeviceList[index];
 ```
 
 备注：其中（IMLCandDeviceModel \*）model 为本地发现待配设备或者云端拉取产品列表组装的model
-本地发现设备参见：本文 设备发现 章节内容
+本地发现设备参见：本文下面 [设备发现](https://lark.alipay.com/ilopdoc/guide/mobile-ios-sdk-add-device#%E8%AE%BE%E5%A4%87%E5%8F%91%E7%8E%B0) 章节内容
 
 其中 IMLCandDeviceModel 属性说明：
 
 | 属性 | 类型 | 是否必选 | 描述 | 备注 |
-| :--- | :--- | :--- | :--- | :--- |
+| --- | --- | --- | --- | --- |
 | productKey | NSString | 是 | 设备productKey |  |
 | deviceName | NSString | 否 | 设备名称 |  |
 | linkType | assign | 否 | 指定配网方式 | ForceAliLinkTypeHotspot 为手机热点配网；ForceAliLinkTypeBLE 为蓝牙辅助配网 |
 | productId | NSString | 否 | 设备产品ID，若是蓝牙辅助配网，则需要 |  |
-
 
 #### 设置配网模式
 ```objectivec
@@ -201,6 +202,7 @@ IMLCandDeviceModel *model = self.localDeviceList[index];
 [kLkAddDevBiz stopAddDevice];
 ```
 
+
 ### __设备绑定__
 设备绑定的时候除了需要 productKey、deviceName，还需要一个设备端的 token，该接口提供从设备端获取绑定 token 的功能。WiFi 设备或者以太网设备均可以使用该接口获取绑定需要的 Token。以太网设备需要先获取到设备的 productKey、deviceName，可以参考使用 startDiscovery 接口去获取。
 
@@ -220,6 +222,22 @@ IMLCandDeviceModel *model = self.localDeviceList[index];
 ```
 ### 
 
+## SDK 依赖
+SDK 使用 CocoaPod 引入依赖：**配网SDK需要引入 1.4.0 版本**
+
+```
+...
+
+// 添加阿里云Source
+source 'https://github.com/aliyun/aliyun-specs.git'
+
+...
+
+//添加引用SDK依赖, 蓝牙辅助配网需要引入 1.4.0 版本
+pod 'IMSDeviceCenter','1.4.0' 
+
+```
+
 ## 使用配网插件
 配网插件基于Bone容器实现了完整的配网逻辑，因此在接入Bone容器的前提下，可以直接打开配网插件来完成配网逻辑，然后再自行处理配网之后的逻辑；
 
@@ -227,9 +245,8 @@ IMLCandDeviceModel *model = self.localDeviceList[index];
 插件Id 国内版：<span data-type="color" style="color:rgb(25, 31, 37)"><span data-type="background" style="background-color:rgb(255, 255, 255)">a123kfz2KdRdrfYc</span></span>
 插件Id 国际版：<span data-type="color" style="color:rgb(25, 31, 37)"><span data-type="background" style="background-color:rgb(255, 255, 255)">a223c2beCJQ2Xpk2</span></span>
 
-<span data-type="color" style="color:rgb(55, 61, 65)"><span data-type="background" style="background-color:rgb(245, 246, 250)">插件Id的具体使用方式，参考见Bone容器部分。也可以参考下面文档对应的</span></span>调用平台提供的配网插件部分，
+<span data-type="color" style="color:rgb(55, 61, 65)"><span data-type="background" style="background-color:rgb(245, 246, 250)">插件Id的具体使用方式，参考见Bone容器部分。也可以参考下面文档对应的</span></span>调用平台提供的配网插件部分，[https://lark.alipay.com/ilopdoc/guide/yzqy0q#8vpydz](https://lark.alipay.com/ilopdoc/guide/yzqy0q#8vpydz)
 
 
 
 ![Screen Shot 2018-05-22 at 10.11.48.png | left | 747x437](https://cdn.yuque.com/lark/0/2018/png/21369/1526955121756-d694a280-56e7-44ea-810e-538b33723cfa.png "")
-
