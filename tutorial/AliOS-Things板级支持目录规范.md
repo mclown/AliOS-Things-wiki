@@ -291,7 +291,7 @@ include $($(NAME)_LOCATION)/$(HOST_MCU_NAME).mk
 **aamcu_demo**.mk其他必须包含项：
 
 ```
-NAME := aamcu_demo                  #主MCU名，需要和目录名一致  
+NAME := aamcu_demo                      #主MCU名，需要和目录名一致  
 $(NAME)_MBINS_TYPE   := kernel          #多bin情况下，归属kernel还是app          
 $(NAME)_SOURCES      +=                 #MCU组件包含.c文件
 $(NAME)_COMPONENTS   +=                 #依赖其他组件名
