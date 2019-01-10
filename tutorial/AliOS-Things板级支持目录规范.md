@@ -22,26 +22,26 @@ arch:  Cortex-M4
         - [1.1.2、命名规范](#112命名规范)
         - [1.1.3、目录结构规范](#113目录结构规范)
         - [1.1.4、函数命名规范](#114函数命名规范)
-        - [1.1.5、mk编写规范](#115mk编写规范aosmk)
+        - [1.1.5、mk编写规范](#115mk编写规范)
 	- [1.2、board新增规范](#12board新增规范)
         - [1.2.1、目录功能](#121目录功能)
         - [1.2.2、命名规范](#122命名规范)
         - [1.2.3、目录结构规范](#123目录结构规范)
         - [1.2.4、函数命名规范](#124函数命名规范)
-        - [1.2.5、mk编写规范](#125mk编写规范aosmk)
+        - [1.2.5、mk编写规范](#125mk编写规范)
     - [1.3、platform新增规范](#13platform新增规范)
         - [1.3.1、arch子目录新增规范](#131arch子目录新增规范)
             - [1.3.1.1、目录功能](#1311目录功能)
             - [1.3.1.2、命名规范](#1312命名规范)
             - [1.3.1.3、目录结构规范](#1313目录结构规范)
             - [1.3.1.4、函数命名规范](#1314函数命名规范)
-            - [1.3.1.5、mk编写规范](#1315mk编写规范aosmk)
+            - [1.3.1.5、mk编写规范](#1315mk编写规范)
         - [1.3.2、mcu子目录新增规范](#132mcu子目录新增规范)
             - [1.3.2.1、目录功能](#1321目录功能)
             - [1.3.2.2、命名规范](#1322命名规范)
             - [1.3.2.3、目录结构规范](#1323目录结构规范)
             - [1.3.2.4、函数命名规范](#1324函数命名规范)
-            - [1.3.2.5、mk编写规范](#1325mk编写规范aosmk)
+            - [1.3.2.5、mk编写规范](#1325mk编写规范)
 - [2、接口定义使用规范](#2接口定义使用规范)
 	- [2.1、内核接口使用规范](#21内核接口使用规范)
 	- [2.2、HAL定义规范](#22hal定义规范)    
@@ -61,7 +61,6 @@ arch:  Cortex-M4
 | 目录名         | 介绍                                                             |
 |----------------|------------------------------------------------------------------|
 | app/example   | 通用用户运行实例，如helloworld实例，可直接使用，无特殊情况不修改 |
-| test/develop  | 用户自定义特殊运行实例，满足某一特定场景时添加                   |
 | board          | 用户需要适配、可配置board级代码，系统启动相关代码                |
 | platform/arch | 该CPU架构内核调度适配接口，可直接使用                            |
 | platform/mcu  | 该MCU通用SDK以及对应的hal适配层                                  |
@@ -69,7 +68,7 @@ arch:  Cortex-M4
 ## 1.1、example新增规范
 --------------------
 
-原则上不建议新增example，除非目前的example不能满足功能需求。app/example下为通用运行实例，test/develop为某些特定场景的实例；如果需要增加实例，无特殊情况，都优先往test/develop中添加。
+原则上不建议新增example，除非目前的example不能满足功能需求。
 
 ### 1.1.1、目录功能
 
@@ -86,8 +85,7 @@ arch:  Cortex-M4
 ```
 helloworld
 |-- helloworld.c       # helloworld source code, including app entry ”application_start”
-|-- Config.in          # menuconfig config file
-|-- aos.mk             # aos build system file(for make)
+|-- helloworld.mk      # aos build system file(for make)
 |-- k_app_config.h     # aos app config file, has higher priority than k_config.h
 |-- ucube.py           # aos build system file(for scons)
 |-- README.md
@@ -97,12 +95,9 @@ helloworld
 
 **运行实例入口统一使用**application_start函数。用户在该接口内添加具体实现。
 
-### 1.1.5、mk编写规范（aos.mk）
+### 1.1.5、mk编写规范
 ```
-NAME := helloworld                        #example名，和目录统一
-$(NAME)_MBINS_TYPE := app                 #在多bin情况下，归属kernel还是app
-$(NAME)_VERSION := 1.0.0                  #menuconfig组件版本号
-$(NAME)_SUMMARY := Hello World            #描述                  
+NAME := helloworld                        #example名，和目录统一                
 $(NAME)_SOURCES      +=                   #example.c文件
 $(NAME)_COMPONENTS   +=                   #依赖其他组件名
 GLOBAL_INCLUDES      +=                   #全局头文件
@@ -139,8 +134,7 @@ Dir\File                          Description                                   
 |-- aaboard_demo.icf         # linkscript file for iar                                         Y
 |-- aaboard_demo.ld          # linkscript file for gcc                                         Y
 |-- aaboard_demo.sct         # linkscript file for sct                                         Y
-|-- aos.mk                   # board makefile                                                  Y
-|-- Config.in                # menuconfig component config                                     Y
+|-- aaboard_demo.mk          # board makefile                                                  Y
 |-- ucube.py                 # aos build system file(for scons)                                N
 |-- README.md                                                                                  Y
 注：gcc、keil、iar任意支持一种即可，无需全部支持，即startup_xx.s和链接文件只需实现一套即可
@@ -154,12 +148,11 @@ Dir\File                          Description                                   
 | board.c          | 统一单板初始化接口：board_init                                                                                                                       |
 | startup.c        | 无特殊情况统一C程序主入口为main； 内部调用单板初始化board_init; 内部调用krhino接口初始化内核； 内部创建主任务入口sys_init。 （具体见初始化流程规范） |
 
-### 1.2.5、mk编写规范（aos.mk）
+### 1.2.5、mk编写规范
+mk取名为具体board.mk
 ```
 NAME := board_aaboard_demo               #board_+单板名                   
 $(NAME)_MBINS_TYPE := kernel             #在多bin情况下，归属kernel还是app
-$(NAME)_VERSION    :=                    #组件版本号
-$(NAME)_SUMMARY    :=                    #描述
 MODULE             := 1062               #固定
 HOST_ARCH          := Cortex-M4          #CPU arch
 HOST_MCU_FAMILY    := aamcu_demo         #归属MCU系列，需要对应platform/mcu
@@ -226,7 +219,7 @@ CPU arch统一对接下述接口
 | cpu_task_stack_init  | 任务栈初始化                                                                                               |
 | cpu_cur_get          | 获取当前核号                                                                                               |
 
-#### 1.3.1.5、mk编写规范（aos.mk）
+#### 1.3.1.5、mk编写规范
 
 没有例外情况，统一在二级Process arch目录添加对应的编译mk文件。
 
@@ -235,7 +228,6 @@ arch mk添加规范如下（以armv7m为例）：
 ```
 NAME := armv7m                            #Process arch名  
 $(NAME)_MBINS_TYPE := kernel              #多bin情况下，归属kernel还是app
-$(NAME)_VERSION    := 0.0.1.0             #menuconfig版本号
 $(NAME)_SUMMARY    := arch for armv7m     #描述              
 $(NAME)_SOURCES       +=                  #组件包含.c文件
 GLOBAL_INCLUDES       +=                  #包含头文件   
@@ -252,15 +244,14 @@ Mcu目录存放其原始SDK驱动文件，以及hal驱动对接层。
 
 #### 1.3.2.2、命名规范
 
-Mcu命令需要使用业界通用名，能直观方便检索到相关信息为准。
+mcu命令需要使用业界通用名，能直观方便检索到相关信息为准。
 
 #### 1.3.2.3、目录结构规范
 ```
 Dir\File                          Description                           Necessary for kernel run
 |-- drivers                 # board peripheral driver                                Y
 |-- hal                     # hal API layer, hal uart is necessary                   Y
-|-- aos.mk                  # mcu makefile                                           Y
-|-- Config.in               # menuconfig component config                            Y
+|-- aamcu_demo.mk           # mcu makefile                                           Y
 |-- ucube.py                # aos build system file(for scons)                       N
 |-- README.md                                                                        Y
 ```
@@ -268,22 +259,22 @@ Dir\File                          Description                           Necessar
 
 统一按照样例aamcu_demo/hal下列出的各模块hal API实现。
 
-#### 1.3.2.5、mk编写规范（aos.mk）
+#### 1.3.2.5、mk编写规范
 
-mcu的mk文件，其描述了当前mcu组件需要的编译文件和编译选项。
+mcu的mk文件，其描述了当前mcu组件需要的编译文件和编译选项,其mk取名和MCU名一致。
 
-如果该系列MCU能实现一个通用mk文件则使用一个即可；如果该MCU体系下存在多种MCU子系列，那么需要添加子mcu的mk文件，在其中放置不同的属性定义。aos.mk作为主mk，主要放置公共的属性配置，并使用HOST_MCU_NAME来分别引用对应的子mcu。
+如果该系列MCU能实现一个通用mk文件则使用一个即可；如果该MCU体系下存在多种MCU子系列，那么需要添加子mcu的mk文件，在其中放置不同的属性定义。主mk，主要放置公共的属性配置，并使用HOST_MCU_NAME来分别引用对应的子mcu。
 
 示例：
 
 ```
 aamcu_demo                              #mcu主目录                         
-    |-- aos.mk                          # 该mcu主mk
+    |-- aamcu_demo.mk                   # 该mcu主mk
     |-- aamcu1_demo.mk                  # aamcu1_demo
     |-- aamcu2_demo.mk                  # aamcu2_demo
 ```
 
-在对应board如aaboard_demo的aos.mk文件引用此mcu模块名时，使用格式：
+在对应board如aaboard_demo的aaboard_demo.mk文件引用此mcu模块名时，使用格式：
 
 示例：
 
@@ -291,23 +282,17 @@ aamcu_demo                              #mcu主目录
 HOST_MCU_FAMILY    := aamcu_demo
 HOST_MCU_NAME      := aamcu1_demo
 ```
-在mcu的主aos.mk中需要分别对子mcu进行引用，使用格式：
+在mcu的主aamcu_demo.mk中需要分别对子mcu进行引用，使用格式：
 
 ```
-ifeq ($(HOST_MCU_NAME), aamcu1_demo)
-include $(SOURCE_ROOT)platform/mcu/$(PLATFORM_MCU_BOARD)/aamcu1_demo.mk
-else ifeq ($(HOST_MCU_NAME),aamcu2_demo)
-include $(SOURCE_ROOT)platform/mcu/$(PLATFORM_MCU_BOARD)/aamcu2_demo.mk
-endif
+include $($(NAME)_LOCATION)/$(HOST_MCU_NAME).mk
 ```
 
-**aos**.mk其他必须包含项：
+**aamcu_demo**.mk其他必须包含项：
 
 ```
-NAME := mcu_aamcu_demo                  #主MCU名，需要和目录名一致  
-$(NAME)_MBINS_TYPE   := kernel          #多bin情况下，归属kernel还是app
-$(NAME)_VERSION      := 0.0.1           #menuconfig组件版本号
-$(NAME)_SUMMARY      := driver & sdk    #描述               
+NAME := aamcu_demo                  #主MCU名，需要和目录名一致  
+$(NAME)_MBINS_TYPE   := kernel          #多bin情况下，归属kernel还是app          
 $(NAME)_SOURCES      +=                 #MCU组件包含.c文件
 $(NAME)_COMPONENTS   +=                 #依赖其他组件名
 GLOBAL_INCLUDES      +=                 #头文件
@@ -366,9 +351,9 @@ krhino_init前不调用malloc、printf函数。原因是此类库函数被内核
 
 在sys_init中，可以添加相关中断激活程序的驱动，比如开始tick计数并触发可能的tick中断，具体实现参考对应单板；
 
-如果需要初始化相关中间件和协议栈模块，使用aos_components_init接口；
+如果需要初始化相关中间件和协议栈模块，使用aos_kernel_init接口；
 
-最后，在非多bin的情况下，统一调用application_start进入上层app入口；多bin情况下，由aos_components_init内部分发处理。
+最后，在非多bin的情况下，aos_kernel_init中会统一调用application_start进入上层app入口；多bin情况下，由aos_kernel_init内部分发处理。
 
 **参考代码**（board/aaboard_demo/startup/startup.c）**：**
 
@@ -399,28 +384,33 @@ int main(void)
 static void sys_init(void)
 {
     /* user code start*/
+
     /*insert driver to enable irq for example: starting to run tick time.
      drivers to trigger irq is forbidden before aos_start, which will start core schedule.
     */
     /*user_trigger_irq();*/  //for example
-    /*aos components init including middleware and protocol and so on !*/
-    aos_components_init(&kinit);
-    #ifndef AOS_BINS
-    application_start(kinit.argc, kinit.argv);  /* jump to app/example entry */
-    #endif
+
+    /*aos components init including middleware and protocol and so on 
+    jump to app entry: application_start !*/
+    aos_kernel_init(&kinit);
 } 
 ```
 （3）、用户app入口示例（参考app/example/helloworld/helloworld.c）：
 
 ```
+static void app_delayed_action(void *arg)
+{
+    LOG("helloworld %s:%d %s\r\n", __func__, __LINE__, aos_task_name());
+    aos_post_delayed_action(5000, app_delayed_action, NULL);
+}
+
 int application_start(int argc, char *argv[])
 {
-    int count = 0;
-    printf("nano entry here!\r\n");
-    while(1) {
-        printf("hello world! count %d \r\n", count++);
-        aos_msleep(1000);
-    };
+    LOG("application started.");
+    aos_post_delayed_action(1000, app_delayed_action, NULL);
+    aos_loop_run();
+
+    return 0;
 }
 ```
 
@@ -469,7 +459,7 @@ AliOS Things Kernel
 
 公共代码原则上避免修改，以影响其他单板。通用文件修改后，需要确认不影响其他工程的编译和运行。如果影响公共代码，需要清晰说明：是修复bug、增加新特性、或是改进功能，并介绍如何完成的。
 
-公共代码范围：目前除新增board目录、新增mcu目录，新增test/develop目录，其他目录或者文件都视为公共文件，包括app/example目录。修改后，都可能影响其他单板。
+公共代码范围：目前除新增board目录、新增mcu目录，其他目录或者文件都视为公共文件，包括app/example目录。修改后，都可能影响其他单板。
 
 ## 5.2、License准则
 ----------------
