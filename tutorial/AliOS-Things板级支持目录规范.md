@@ -93,7 +93,7 @@ helloworld
 
 ### 1.1.4、函数命名规范
 
-**运行实例入口统一使用**application_start函数。用户在该接口内添加具体实现。
+**运行实例入口统一使用**application_start函数。用户可以在该接口内添加具体实现。
 
 ### 1.1.5、mk编写规范
 ```
@@ -227,8 +227,7 @@ arch mk添加规范如下（以armv7m为例）：
 
 ```
 NAME := armv7m                            #Process arch名  
-$(NAME)_MBINS_TYPE := kernel              #多bin情况下，归属kernel还是app
-$(NAME)_SUMMARY    := arch for armv7m     #描述              
+$(NAME)_MBINS_TYPE := kernel              #多bin情况下，归属kernel还是app           
 $(NAME)_SOURCES       +=                  #组件包含.c文件
 GLOBAL_INCLUDES       +=                  #包含头文件   
 ifeq ($(COMPILER),armcc)                  #区分编译器
@@ -238,7 +237,7 @@ ifeq ($(HOST_ARCH),Cortex-M4)             #区分Process series
 
 #### 1.3.2.1、目录功能
 
-Mcu目录存放其原始SDK驱动文件，以及hal驱动对接层。
+mcu目录存放其原始SDK驱动文件，以及hal驱动对接层。
 
 其中的SDK文件原则上直接使用厂商的驱动包，除了License或bug修复等，原则上不做修改。板级相关的配置代码统一放入board目录。
 
@@ -252,7 +251,6 @@ Dir\File                          Description                           Necessar
 |-- drivers                 # board peripheral driver                                Y
 |-- hal                     # hal API layer, hal uart is necessary                   Y
 |-- aamcu_demo.mk           # mcu makefile                                           Y
-|-- ucube.py                # aos build system file(for scons)                       N
 |-- README.md                                                                        Y
 ```
 #### 1.3.2.4、函数命名规范
