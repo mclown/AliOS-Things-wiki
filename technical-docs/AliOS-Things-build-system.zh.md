@@ -69,6 +69,7 @@ config.mk 其实就是把所有组件 mk 中的信息汇总到一起。而后面
 ## 编译
 
 编译命令
+aos_target_build.mk中
 
 ![](https://img.alicdn.com/tfs/TB15QZglZjI8KJjSsppXXXbyVXa-1279-94.png)
 
@@ -77,16 +78,19 @@ config.mk 其实就是把所有组件 mk 中的信息汇总到一起。而后面
 ![](https://img.alicdn.com/tfs/TB1fSAglZjI8KJjSsppXXXbyVXa-1494-100.png)
 
 每个组件的编译选项产生
+aos_target_config.mk中
 
 ![](https://img.alicdn.com/tfs/TB1yegUl26H8KJjSspmXXb2WXXa-1528-254.png)
 
 ## 链接
 
 链接命令
+aos_target_build.mk中
 
 ![](https://img.alicdn.com/tfs/TB1MzQLl2DH8KJjy1XcXXcpdXXa-1274-86.png)
 
 链接选项的产生
+aos_target_config.mk中
 
 ![](https://img.alicdn.com/tfs/TB1yz3ol8DH8KJjSspnXXbNAVXa-1521-141.png)
 
