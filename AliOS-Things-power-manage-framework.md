@@ -38,6 +38,7 @@ MCU的平均运行电流在4mA左右，在添加电源管理模块后MCU的电�
 从测试结果可以看出，在对功耗敏感的系统上，比如依靠电池供电的系统，非常有必要使用电源管理框架，它可显著降低系统功耗，增加系统待机时间。
 
 # 二、应用配置（为应用添加低功耗支持）
+## 2.1 AliOS Things 2.0之前版本
 应用若要使用电源管理框架，需进行如下配置：
 
 * （1）应用目录的.mk文件中添加对电源管理模块的依赖，示例：
@@ -51,9 +52,17 @@ MCU的平均运行电流在4mA左右，在添加电源管理模块后MCU的电�
 
     `cpu_pwrmgmt_init();`
 
+## 2.2 AliOS Things 2.0之后版本
+AliOS Things 2.0之后的版本将由系统自动调用初始化函数，只需在app中添加对电源管理模块的依赖即可，示例：
+$(NAME)_COMPONENTS := pwrmgmt
+
+注：系统自动调用初始化函数的位置为kernel/init/aos_init.c文件aos_components_init函数中，调用代码为：
+#ifdef AOS_COMP_PWRMGMT
+    cpu_pwrmgmt_init();
+#endif
+
 # 三、示例应用（app/example/pwr_test）
-目前AliOS Things
-2.0版本在developerkit和PCA10040平台上对电源管理框架进行了适配，可用如下命令编译示例应用并下载到develoerkit上运行：
+目前AliOS Things 2.0版本在developerkit和PCA10040平台上对电源管理框架进行了适配，可用如下命令编译示例应用并下载到develoerkit上运行：
 
 `aos make pwr_test\@developerkit`
 
@@ -84,6 +93,7 @@ count2 = 2
 count1 = 5, idle = 11726554
 
 count1 = 6, idle = 14072465
+
 注：如果前后两次打印g_idle_count[0]没有增加，说明系统中有任务一直在运行导致idle任务没有运行。通常是串口采用轮询输入引起的，可修改为中断输入或去掉对CLI模块的依赖（应用.mk文件中$(NAME)_COMPONENTS行去掉CLI）。
 
 开启低功耗时，当demo1和demo2处于睡眠状态时，idle任务执行g_idle_count[0]增1后，调用`cpu_pwr_down()`进入低功耗状态。因此系统每次进入空闲状态，g_idle_count[0]只增加1。输出示例如下：
@@ -142,7 +152,7 @@ count1 = 5, idle = 7
 | `tickless_one_shot_timer_save`   | 注册支持tickless机制的定时器         |
 | `cpu_pwr_c_method_set`           | 注册CPU状态设置函数                  |
 
-##4.3 接口具体说明
+## 4.3 接口具体说明
 * （1）board_cpu_pwr_init示例调用说明：
 调用`cpu_pwr_node_init_static/cpu_pwr_node_record`配置并记录CPU核信息。
 调用`cpu_pwr_c_method_set`设置CPU的状态设置函数；
@@ -152,6 +162,7 @@ count1 = 5, idle = 7
 调用`tickless_c_states_add`配置Cx支持tickless策略。
 
 如果适配的平台为单核且只支持1种低功耗状态，通常可直接使用示例代码。当然，最好检查一下tickless_one_shot_timer_save中注册的低功耗定时器是否是你定义的。
+
 * （2）cpu_cstate_set_t
 设置CPU低功耗状态的函数指针。
 每条分支表示进入该状态需要调用的函数，比如：
@@ -166,12 +177,15 @@ case CPU_CSTATE_C1:
 该函数指针对应的函数为：
 static pwr_status_t board_cpu_c_state_set(uint32_t cpuCState, int master)
 
-
 # 五、从FreeRTOS tickless切换为AliOS Things电源管理框架
 FreeRTOS tickless机制主要在函数vPortSuppressTicksAndSleep中实现。其主要流程如下：
+
 ![](https://github.com/liano1987/picture/blob/master/freertos%20tickless.png)
+
 AliOS Things电源管理框架也实现了tickless机制，但在实现上采用了更好的架构：把通用部分放在框架中处理，比如时钟补偿；为唤醒时钟定义one_shot_timer_t结构体，对低功耗时钟进行独立封装。对AliOS Things的用户来说，无需在一个函数中处理所有事情，只需为电源管理框架提供平台相关的HAL层函数即可。AliOS Things电源管理框架的主要流程为：
+
 ![](https://github.com/liano1987/picture/blob/master/alios%20pwrmgmt.png)
+
 上图上半部分为低功耗框架部分，执行通用代码，下半部分为hal层函数为框架提供平台相关功能。
 与低功耗时钟相关的封装在one_shot_timer_t结构内的函数中。one_shot_seconds_max函数返回低功耗定时器最大定时时间，相当于返回FreeRTOS下的xMaximumPossibleSuppressedTicks。one_shot_start为启动低功耗定时器，该函数的入参为预期睡眠时间，即把FreeRTOS下配置并启动低功耗时钟的相关代码封装在这里。one_shot_stop函数停止低功耗时钟，并返回低功耗经历的时间，即把FreeRTOS下停止低功耗时钟，计算低功耗下经历时间的代码封装在这个函数中。
 systick_suspend/ systick_resume为挂起/恢复系统时钟，即把FreeRTOS下系统时钟挂起/恢复的代码段封装在这里。
