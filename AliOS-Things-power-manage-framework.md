@@ -187,6 +187,9 @@ AliOS Things电源管理框架也实现了tickless机制，但在实现上采用
 ![](https://github.com/liano1987/picture/blob/master/alios%20pwrmgmt.png)
 
 上图上半部分为低功耗框架部分，执行通用代码，下半部分为hal层函数为框架提供平台相关功能。
+
 与低功耗时钟相关的封装在one_shot_timer_t结构内的函数中。one_shot_seconds_max函数返回低功耗定时器最大定时时间，相当于返回FreeRTOS下的xMaximumPossibleSuppressedTicks。one_shot_start为启动低功耗定时器，该函数的入参为预期睡眠时间，即把FreeRTOS下配置并启动低功耗时钟的相关代码封装在这里。one_shot_stop函数停止低功耗时钟，并返回低功耗经历的时间，即把FreeRTOS下停止低功耗时钟，计算低功耗下经历时间的代码封装在这个函数中。
+
 systick_suspend/ systick_resume为挂起/恢复系统时钟，即把FreeRTOS下系统时钟挂起/恢复的代码段封装在这里。
+
 cpu_cstate_set_t指向的函数（board_cpu_c_state_set）用于设置CPU状态，即把FreeRTOS下进入低功耗的函数调用封装在这里。
