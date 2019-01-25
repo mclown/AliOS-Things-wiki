@@ -154,11 +154,17 @@ count1 = 5, idle = 7
 
 ## 4.3 接口具体说明
 * （1）board_cpu_pwr_init示例调用说明：
+
 调用`cpu_pwr_node_init_static/cpu_pwr_node_record`配置并记录CPU核信息。
+
 调用`cpu_pwr_c_method_set`设置CPU的状态设置函数；
+
 调用`cpu_pwr_c_state_capability_set`设置CPU支持的电源状态，其中C0表示运行态，如果只支持一种低功耗，那么再配置C1即可。
+
 调用`cpu_pwr_c_state_latency_save`设置退出Cx的延时，比如退出C1低功耗状态的延时；
+
 调用`tickless_one_shot_timer_save`注册低功耗下的时钟；
+
 调用`tickless_c_states_add`配置Cx支持tickless策略。
 
 如果适配的平台为单核且只支持1种低功耗状态，通常可直接使用示例代码。当然，最好检查一下tickless_one_shot_timer_save中注册的低功耗定时器是否是你定义的。
