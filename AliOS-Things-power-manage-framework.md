@@ -153,7 +153,7 @@ count1 = 5, idle = 7
 | `cpu_pwr_c_method_set`           | 注册CPU状态设置函数                  |
 
 ## 4.3 接口具体说明
-* （1）board_cpu_pwr_init示例调用说明：
+* （1）board_cpu_pwr_init示例调用说明
 
 调用`cpu_pwr_node_init_static/cpu_pwr_node_record`配置并记录CPU核信息。
 
@@ -167,10 +167,10 @@ count1 = 5, idle = 7
 
 调用`tickless_c_states_add`配置Cx支持tickless策略。
 
-如果适配的平台为单核且只支持1种低功耗状态，通常可直接使用示例代码。当然，最好检查一下tickless_one_shot_timer_save中注册的低功耗定时器是否是你定义的。
+注：如果适配的平台为单核且只支持1种低功耗状态，通常可直接使用示例代码。当然，最好检查一下tickless_one_shot_timer_save中注册的低功耗定时器是否是你定义的。
 
-* （2）cpu_cstate_set_t
-设置CPU低功耗状态的函数指针。
+* （2）cpu_cstate_set_t（设置CPU低功耗状态的函数指针）
+
 每条分支表示进入该状态需要调用的函数，比如：
 `case CPU_CSTATE_C0:
     break;
@@ -180,7 +180,7 @@ case CPU_CSTATE_C1:
 
 说明：C0为运行态，在单核下，通常由中断从低功耗唤醒，不需要调用函数，因此这里直接break即可；C1映射CPU的一种低功耗状态，通常需要调用函数才能进入，比如Cortex M4下调用WFI指令进入。
 
-该函数指针对应的函数为：
+该函数指针对应的hal层函数为：
 static pwr_status_t board_cpu_c_state_set(uint32_t cpuCState, int master)
 
 # 五、从FreeRTOS tickless切换为AliOS Things电源管理框架
