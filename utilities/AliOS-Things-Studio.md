@@ -4,32 +4,10 @@
 https://code.visualstudio.com/
 
 ### 安装 AliOS Studio 插件
-1. 安装 C/C++ 插件
-![](https://img.alicdn.com/tfs/TB1YVS4ghGYBuNjy0FnXXX5lpXa-3270-2182.png)
-2. 安装 alios-studio 插件
-![](https://img.alicdn.com/tfs/TB1eFS4ghGYBuNjy0FnXXX5lpXa-3270-2182.png)
+
+![](https://img.alicdn.com/tfs/TB1l4kMnbvpK1RjSZPiXXbmwXXa-1231-848.jpg)
+
 > 如果已有安装，请确保 alios-studio 插件版本升级到 0.8.0 以上
-#### 设置最大可监听文件数
-> **针对Linux系统**，windows和mac无需设置
-
-linux系统默认系统可监听文件数为8192个，`AliOS-Things`的源码比较大，文件数远远大于8192个，此时vscode无法监听所有的文件改动，导致AliOS Studio 插件会工作不正常，报如下错误：
-
-![](https://img.alicdn.com/tfs/TB1xxKIororBKNjSZFjXXc_SpXa-374-89.jpg)
-
-使用如下命令查看当前可监听文件数：
-```sh
-cat /proc/sys/fs/inotify/max_user_watches
-```
-编辑文件：`/etc/sysctl.conf`，然后增加如下行：
-```sh
-fs.inotify.max_user_watches=524288
-```
-使用如下指令生效：
-```sh
-sudo sysctl -p
-```
-
-> Arch Linux 用户请参考此[链接](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers).
 
 ### 开发环境准备
 
@@ -72,13 +50,20 @@ $ pip install --upgrade wheel
 $ pip install --upgrade aos-cube
 ```
 
+#### AliOS Studio一键安装aos-cube
+
+AliOS Studio也支持一键安装aos-cube，如下图所示：
+
+> `AliOS Studio`一键安装的`aos-cube`是安装在虚拟python环境里面的([virualenv](https://virtualenv.pypa.io/en/latest/))，在vscode的终端里面能够正常使用`aos-cube`，其他终端无法正常使用`aos-cube`。
+
+![](https://img.alicdn.com/tfs/TB1zVnemSzqK1RjSZFLXXcn2XXa-1141-820.gif)
+
 ### 下载 AliOS Things 代码
 
 从GitHub克隆：
 `git clone https://github.com/alibaba/AliOS-Things.git`  
 或者从国内镜像站点：
 `git clone https://gitee.com/alios-things/AliOS-Things.git`
-
 
 ### 开始上手
 
@@ -113,3 +98,89 @@ $ pip install --upgrade aos-cube
 ### 调试
 细节参考 [Starter-Kit-Tutorial#调试](Starter-Kit-Tutorial#调试)  
 或视频 [使用 AliOS Studio 开始 AliOS Things 调试](http://v.youku.com/v_show/id_XMzU3OTE5ODE1Ng==.html)
+
+### 其他
+
+#### AliOS Studio 命令列表
+
+按<kbd> Ctrl-Shift-P </kbd> 打开vscode的命令面板，输入 `alios-studio`可以看到`AliOS Studio`支持的命令：
+
+![](https://img.alicdn.com/tfs/TB1idGckQvoK1RjSZFNXXcxMVXa-748-412.png)
+
+命令说明：
+
+|命令|描述|下方工具栏图标|
+|:---|:---|:---:|
+|`Build`|编译： `aos make app@board`|![](https://img.alicdn.com/tfs/TB14LGAkNnaK1RjSZFBXXcW7VXa-25-22.png)|
+|`Change build target`|改变编译目标：app和board|![](https://img.alicdn.com/tfs/TB15HqhkMHqK1RjSZFEXXcGMXXa-25-22.png)|
+|`Clean`|清除: `aos make clean`|![](https://img.alicdn.com/tfs/TB1_PN_kSrqK1RjSZK9XXXyypXa-25-22.png)|
+|`Config Serial Monitor`||
+|`Connect device` |打开串口: `aos monitor`|![](https://img.alicdn.com/tfs/TB1oSSckHvpK1RjSZPiXXbmwXXa-25-22.png)|
+|`Install aos-cube`|参考：[AliOS Studio一键安装aos-cube](#alios-studio一键安装aos-cube)|-|
+|`List Device`|列出所有串口|-|
+|`Manage Account`|管理阿里云账号|-|
+|`Probe Device`|-|-|
+|`Technical Support`|打开**钉钉**|
+|`Upload`|上传固件到开发板： `aos upload app@board`|![](https://img.alicdn.com/tfs/TB1gwqakNTpK1RjSZR0XXbEwXXa-25-22.png)|
+
+#### AliOS Studio 快捷键
+
+|按键|执行命令|描述|
+|:-|:-|:-:|
+|<kbd>shift+alt+b</kbd>|`alios-studio.build`|编译|
+|<kbd>shift+alt+c</kbd>|`alios-studio.clean`|清除|
+|<kbd>shift+alt+u</kbd>|`alios-studio.upload`|上传固件|
+
+也可以在`keybindings.json`中自定义自己喜欢的按键组合：
+
+```json
+[
+    {
+      "command": "alios-studio.build",
+      "key": "shift+alt+b"
+    },
+    {
+      "command": "alios-studio.clean",
+      "key": "shift+alt+c"
+    },
+    {
+      "command": "alios-studio.upload",
+      "key": "shift+alt+u"
+    }
+]
+```
+
+### 常见问题
+
+##### Visual Studio Code is unable to watch for file changes in this large workspace
+
+> 针对Linux系统，windows和mac不会出现这种情况。
+
+该错误在 linux系统上比较常见，主要是因为linux系统最大可监听文件数有限制。linux系统默认系统可监听文件数为8192个，`AliOS-Things`的源码比较大，文件数远远大于8192个，此时vscode无法监听所有的文件改动，导致AliOS Studio 插件会工作不正常，报如下错误：
+
+![](https://img.alicdn.com/tfs/TB1xxKIororBKNjSZFjXXc_SpXa-374-89.jpg)
+
+**解决办法：**
+此时需要设置**linux系统最大可监听文件数**。
+
+使用如下命令查看当前可监听文件数：
+```sh
+cat /proc/sys/fs/inotify/max_user_watches
+```
+编辑文件：`/etc/sysctl.conf`，然后增加如下行：
+```sh
+fs.inotify.max_user_watches=524288
+```
+使用如下指令生效：
+```sh
+sudo sysctl -p
+```
+
+> Arch Linux 用户请参考此[链接](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers).
+
+
+ 更多细节请参考：["Visual Studio Code is unable to watch for file changes in this large workspace" (error ENOSPC)](https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc)。
+
+##### Workspace is too large to watch for file changes
+
+和上面的问题一样：[Visual Studio Code is unable to watch for file changes in this large workspace](#visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace)
