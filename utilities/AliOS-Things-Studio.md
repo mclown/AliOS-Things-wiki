@@ -105,7 +105,7 @@ AliOS Studio也支持一键安装aos-cube，如下图所示：
 
 按<kbd> Ctrl-Shift-P </kbd> 打开vscode的命令面板，输入 `alios-studio`可以看到`AliOS Studio`支持的命令：
 
-![](https://img.alicdn.com/tfs/TB1idGckQvoK1RjSZFNXXcxMVXa-748-412.png)
+![](https://img.alicdn.com/tfs/TB1D5FBH9rqK1RjSZK9XXXyypXa-717-413.jpg)
 
 命令说明：
 
@@ -114,14 +114,16 @@ AliOS Studio也支持一键安装aos-cube，如下图所示：
 |`Build`|编译： `aos make app@board`|![](https://img.alicdn.com/tfs/TB14LGAkNnaK1RjSZFBXXcW7VXa-25-22.png)|
 |`Change build target`|改变编译目标：app和board|![](https://img.alicdn.com/tfs/TB15HqhkMHqK1RjSZFEXXcGMXXa-25-22.png)|
 |`Clean`|清除: `aos make clean`|![](https://img.alicdn.com/tfs/TB1_PN_kSrqK1RjSZK9XXXyypXa-25-22.png)|
-|`Config Serial Monitor`||
+|`Upload`|上传固件到开发板： `aos upload app@board`|![](https://img.alicdn.com/tfs/TB1gwqakNTpK1RjSZR0XXbEwXXa-25-22.png)|
+|`Config Serial Monitor`|-|-|
 |`Connect device` |打开串口: `aos monitor`|![](https://img.alicdn.com/tfs/TB1oSSckHvpK1RjSZPiXXbmwXXa-25-22.png)|
 |`Install aos-cube`|参考：[AliOS Studio一键安装aos-cube](#alios-studio一键安装aos-cube)|-|
 |`List Device`|列出所有串口|-|
 |`Manage Account`|管理阿里云账号|-|
 |`Probe Device`|-|-|
 |`Technical Support`|打开**钉钉**|
-|`Upload`|上传固件到开发板： `aos upload app@board`|![](https://img.alicdn.com/tfs/TB1gwqakNTpK1RjSZR0XXbEwXXa-25-22.png)|
+|`OTA(Developerment Over-The-Air)`|一键OTA功能|-|
+|`Show welcome page`|显示welcome页面|-|
 
 #### AliOS Studio 快捷键
 
@@ -149,6 +151,21 @@ AliOS Studio也支持一键安装aos-cube，如下图所示：
     }
 ]
 ```
+
+## 其他功能
+
+### 鼠标移到AliOS Things的API上会显示API说明链接
+
+为了方便开发者尽快熟悉AliOS Things API，当鼠标移到AliOS Things的API上就会显示`查看AliOSThings 官方API文档`：
+
+![](https://img.alicdn.com/tfs/TB1p3RKHVzqK1RjSZFCXXbbxVXa-917-350.png)
+
+### 转换TSL json文件为C代码文件
+
+[物的模型(TSL)](https://help.aliyun.com/document_detail/73727.html?spm=a2c4g.11186623.6.566.62742ab2c8pTxa) 是阿里云IOT平台很重要的一个概念，是一个数据模型，它是物理空间中的实体，如传感器、车载装置、楼宇、工厂等在云端的数字化表示。
+`AliOS Studio` 提供了一个高效的方法可以快速的把TSL json文件转换为C代码文件，右键json文件，然后选中`Convert TSL json to C string` 即可转换:
+
+![](https://img.alicdn.com/tfs/TB17h0GHVYqK1RjSZLeXXbXppXa-1140-820.gif)
 
 ### 常见问题
 
@@ -184,3 +201,7 @@ sudo sysctl -p
 ##### Workspace is too large to watch for file changes
 
 和上面的问题一样：[Visual Studio Code is unable to watch for file changes in this large workspace](#visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace)
+
+##### SyntaxError: .vscode\launch.json: Unexpected token / in JSON at position 4378
+
+Don't add comments in `.vscode/tasks.json` or `.vscode/launch.json`.
