@@ -1,5 +1,7 @@
 # uData MODBUS sensor porting guide #
 
+For English version please refer to https://github.com/alibaba/AliOS-Things/wiki/uData-MODBUS-sensor-porting-guide(eng)
+
 ## MODBUS库API ##
 AliOS Things提供MODBUS库，相关API可以查看kernel下面的mbmaster_api.h
 ```
