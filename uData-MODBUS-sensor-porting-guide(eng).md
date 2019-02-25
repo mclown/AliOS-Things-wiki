@@ -20,7 +20,7 @@ AliOS Things provides MODBUS library, related API can refer to  mbmaster_api.h u
 
 ## MODBUS sensor driver ##
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/111215/1551084913716-24bb349d-a268-4a94-80b2-e3b5789fb7f3.png)
+![](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/111215/1551085806938-3017c962-7d3a-4022-ac32-aa46b5055187.png)
 AliOS Things provides a set of sensor uData frameworks that abstract the MODBUS sensor driver nodes through the vfs interface open and read operations.
 The MODBUS sensor driver calls the MODBUS library interface to read sensor data.
 
