@@ -1,83 +1,58 @@
 [EN](AliOS-Things-uCube) | 中文
 
 # 目录
-- [1 环境配置](#1-环境配置)
-    - [1.1 python](#11-python)
-    - [1.2 ucube](#12-ucube)
-    - [1.3 工具链](#13-工具链)
-- [2 新建](#2-新建)
-- [3 组件](#3-组件)
-    - [3.1 组件信息](#31-组件信息)
-    - [3.2 添加组件](#32-添加组件)
-    - [3.3 删除组件](#33-删除组件)
-- [4 IDE支持](#4-IDE支持)
+- [1 安装](#1-安装)
+- [2 使用](#2-使用)
+    - [2.1 工程构建](#21-工程构建)
+    - [2.2 烧录与调试](#22-烧录与调试)
+    - [2.3 串口监控](#23-串口监控)
+    - [2.4 帮助信息](#24-帮助信息)
 ------
-**AliOS-Things uCube** 是 AliOS-Things 项目开发管理工具（简写命令为 aos）：
-1. 编译代码、Image下载、板子调试。
-2. 创建模板工程，基于模板做再次开发。
-3. 支持组件化，获取组件信息，组件的自由组合，满足业务场景的不同需求。
+**AliOS-Things uCube** 是 AliOS Things 基于命令行的开发管理工具（命令简写为 aos），主要功能包括：工程配置与编译、Image下载调试、其他辅助功能以及与IDE集成。
 
-# 1 环境配置 
-## 1.1 python
-uCube 基于 Python（Version：2.7）语言开发，需要有 Python（Version：2.7）开发环境（Python 2.7.14 下验证测试通过）。
-## 1.2 ucube
-使用 pip 安装 uCube 工具（在 MacOS 和 Linux上需要 sudo）：  
+# 1 安装
+uCube 基于 Python（Version：2.7）语言开发，需要有 Python（Version：2.7）开发环境（Python 2.7.14 下验证测试通过）。如开发环境中尚未安装aos-cube，请参考[AliOS Things Environment Setup](AliOS-Things-Environment-Setup)。
 
-`$ sudo pip install -U aos-cube`  
-
-安装完成后， `aos --version` (aos-cube 简写命令）输出版本号。
-
-## 1.3 工具链
-使用 uCube 的编译、工程创建等功能，用到工具链。工具链的配置，参考 [AliOS Things Environment Setup](AliOS-Things-Environment-Setup) 系统环境配置 -> 交叉工具链配置。
-# 2 新建
-## 2.1 工程
-`aos new helloworld`, 会新建 helloworld 目录，并在 helloworld 创建工程，进入 helloword 目录，`aos make helloworld@mk3060` 编译
-## 2.1 组件
-`aos new -c helloworld`，会新建 helloworld 组件目录。
-
-# 3 组件
-## 3.1 组件信息
-`aos ls -c` 可以查看 AliOS-Things 所有的组件：
+# 2 使用
+## 2.1 工程构建
+AliOS Things 2.1及其后续版本需要先配置、再构建（需要aos-cube 0.3.x）:
 ```
-                                                      AliOS-Things COMPONENTS
-|===================================================================================================================|
-| NAME                           | LOCATION                                                                         |
-| mbedtls                        | aos/security/mbedtls                                                             |
-| stm32l071kb                    | aos/platform/mcu/stm32l0xx/stm32l071kb                                           |
-| device_sal_mk3060              | aos/device/sal/wifi/mk3060                                                       |
-| wsf                            | aos/framework/connectivity/wsf                                                   |
-| wifimonitor                    | aos/example/wifimonitor                                                          |
-| rhino_test                     | aos/test/testcase/kernel/rhino_test                                              |
-| tls_client                     | aos/example/tls                                                                  |
-| newlib_stub                    | aos/utility/libc                                                                 |
-| hal                            | aos/kernel/hal                                                                   |
-| coap                           | aos/framework/connectivity/coap                                                  |
-......
-|===================================================================================================================|
+# 生成最简配置并构建
+aos make helloworld@developerkit -c config
+aos make
+
+# 自定义配置并构建
+aos make menuconfig
+aos make
 ```
 
-## 3.2 添加组件
-在 AliOS-Things 工程目录下面（aos new PATH），添加组件：  
+AliOS Things 2.0及之前的版本直接执行命令：
 ```
-# aos add mesh
-[AliOS-Things] Add component mesh (local) in aos/kernel/protocols/mesh
-```  
-mesh 组件添加成功。
-组件添加后，基于组件功能开发。
-
-uCube 支持通过 URL 添加组件（新建组件参考 [Add a new component example](Add-a-new-component-example))：
-```
-# aos add https://github.com/AliOS-Things/test_component.git
-[AliOS-Things] Adding component "test_component" from "https://github.com/AliOS-Things/test_component.git" at latest revision in the current branch
-[AliOS-Things] Add component test_component (remote) in test_component
-```
-URL 添加远程组件。
-
-## 3.3 删除组件
-```
-# aos rm mesh
-[AliOS-Things] Remove component mesh (local) in aos/kernel/protocols/mesh
+aos make helloworld@developerkit
 ```
 
-## 4 IDE支持
-uCube组件化功IDE支持正在开发中，敬请期待。
+## 2.2 烧录与调试
+构建完成后，连接开发板到开发主机，首先将编译生成的镜像上传到开发板，然后启动调试器：
+```
+aos upload helloworld@developerkit
+aos debug helloworld@developerkit
+```
+
+AliOS Things 2.1及其后续版本支持简化的烧录和调试命令行（需要aos-cube 0.3.x），构建完成后直接执行：
+```
+aos upload
+aos debug
+```
+
+## 2.3 串口监控
+连接串口并查看应用输出和执行过程：
+```
+$ aos monitor <serial port> <baudrate>
+```
+
+## 2.4 帮助信息
+其他辅助功能及信息请参考帮助：
+```
+$ aos -h
+$ aos <subcommand> -h
+```
