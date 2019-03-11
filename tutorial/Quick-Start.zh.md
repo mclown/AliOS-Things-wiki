@@ -37,7 +37,7 @@ git clone https://github.com/alibaba/AliOS-Things.git
 
 ## 编译运行
 
-AliOS Things 2.1及其后续版本(需要aos-cube 0.3.x)
+AliOS Things 2.1及其后续版本(需要aos-cube 0.3.x)，更多配置参见[这里](AliOS-Things-Build-Configuration.zh)
 ```bash
 cd AliOS-Things
 aos make helloworld@linuxhost -c config && aos make
