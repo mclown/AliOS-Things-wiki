@@ -57,6 +57,7 @@ Please refer to [AliOS Things Technical Overview](AliOS-Things-Technical-Overvie
 - [uMesh Security](uMesh-Security)
 - [OTA Flash Partitions Overview](OTA-Flash-Partitions-Overview)
 - [Coding Style](AliOS-Things-Coding-Style-Guide)
+- [AliOS Things 2.1 Build and Configuration](AliOS-Things-Build-Configuration.zh)
 
 ## BoneEngine@Lite
 - [BoneEngine@Lite description](boneengine_lite_description)
