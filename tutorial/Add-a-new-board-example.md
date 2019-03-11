@@ -4,6 +4,8 @@ EN| [中文](Add-a-new-board-example.zh)
 
 This article takes stm32433 as an example to illustrate how to add single board of this type to the existing make system based on stm32433 HelloWorld keil project. 
 
+Reference versions of AliOS Things: AOS-R-2.0.0 and former releases
+
 ## 1 Add board component
 
 If the compilation target is nano@stm32l433-nucleo, then when making system searches for dependency component, it will search for component named stm32l433-nucleo from board directory. So you need to create a board/stm32l433-nucleo directory and add a stm32l433-nucleo.mk file in it. You can refer to the existing b_l475e.mk (delete some of them that you don't need).
@@ -22,4 +24,4 @@ When adding to "make" system, there will be a keil project in advance. Generally
 
 ## 5 Separate different link scripts 
 
-Link scripts of different boards should also be separated. 
+Link scripts of different boards should also be separated.

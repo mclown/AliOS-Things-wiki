@@ -5,6 +5,8 @@
 ## 概述
 本文将描述如何基于AliOS Things源码进行应用开发，涉及的内容包括：软硬件环境搭建、如何创建第一个应用程序、AliOS Things重要开发组件的使用等。
 
+AliOS Things参考版本：AOS-R-2.0.0及之前的版本
+
 ## 软硬件环境准备
 AliOS Things支持多种硬件平台。开发应用的硬件环境包括开发板、串口、调试器、烧录器等。
 AliOS Things支持命令行工具和IDE两种开发方式。AliOS Things开发环境的搭建请参照：[AliOS Things Development Environment Setup](AliOS-Things-Environment-Setup)

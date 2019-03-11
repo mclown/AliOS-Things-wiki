@@ -4,6 +4,8 @@ EN | [中文](Add-a-new-component-example.zh)
 
 It will be illustrated through two examples. 
 
+Reference versions of AliOS Things: AOS-R-2.0.0 and former releases
+
 ## 1.1	Task 1
 
 Add a new component that existing apps can call

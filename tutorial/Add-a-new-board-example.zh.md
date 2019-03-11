@@ -2,6 +2,8 @@
 
 下面以stm32433为例，来说明如何根据现有的stm32433 helloworld keil工程来stm32433这一类型单板添加到现有make构建体系中：
 
+AliOS Things参考版本：AOS-R-2.0.0及之前的版本
+
 ## 1 添加board组件
 如编译的目标是：nano@stm32l433-nucleo, 那么make体系在查找依赖组件时，会先从board目录下查找名为 stm32l433-nucleo的组件。所以需创建 board/stm32l433-nucleo目录，并在其中添加 stm32l433-nucleo.mk 文件，其内容可以参照已有的b_l475e.mk（删去其中一些不需要的内容 ）。
 ## 2 添加mcu组件

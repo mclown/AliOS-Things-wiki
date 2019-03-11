@@ -5,6 +5,8 @@ EN | [中文](AliOS-Things-APP-DEV-Guide.zh)
 ## Introduction
 This tutorial describes how to develope application from source based on AliOS Things, including environment setup, app creating, etc.
 
+Reference versions of AliOS Things: AOS-R-2.0.0 and former releases
+
 ## Software/Hardware Environment
 - Hardware Environment
 AliOS Things supports all kinds of hardware platforms, like develpment boards, serial port tools, debuggers, flashers, etc.
