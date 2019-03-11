@@ -6,3 +6,4 @@
 - [Debugging](Debugging-Overview)
 - [uMesh Security](uMesh-Security)
 - [Coding Style](AliOS-Things-Coding-Style-Guide)
+- [AliOS Things 2.1 Build and Configuration](AliOS-Things-Build-Configuration.zh)
