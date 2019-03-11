@@ -56,7 +56,7 @@ AliOS Studio也支持一键安装aos-cube，如下图所示：
 
 > `AliOS Studio`一键安装的`aos-cube`是安装在虚拟python环境里面的([virualenv](https://virtualenv.pypa.io/en/latest/))，在vscode的终端里面能够正常使用`aos-cube`，其他终端无法正常使用`aos-cube`。
 
-![](https://img.alicdn.com/tfs/TB1zVnemSzqK1RjSZFLXXcn2XXa-1141-820.gif)
+![](https://img.alicdn.com/tfs/TB1udE8d_Zmx1VjSZFGXXax2XXa-1140-820.gif)
 
 ### 下载 AliOS Things 代码
 
@@ -70,23 +70,26 @@ AliOS Studio也支持一键安装aos-cube，如下图所示：
 这里我们基于 Starter Kit 开发板来介绍 AliOS Studio 的使用，其他板子可以此类推。  
 对应视频 [使用 AliOS Studio 开始 AliOS Things 开发](http://v.youku.com/v_show/id_XMzU3OTE2MzI1Ng==.html)
 
-#### 编译 helloworld
+#### 编译
 
 1. 在 Visual Studio Code 中打开下载好的 AliOS Things 代码目录
-![](https://img.alicdn.com/tfs/TB1cPDapwmTBuNjy1XbXXaMrVXa-2032-1170.png)
-2. 所有功能都集中在下方工具栏中  
-小图标从左至右功能分别是 `编译` `烧录` `串口工具` `创建工程` `清除`  
-![](https://img.alicdn.com/tfs/TB1WPzapwmTBuNjy1XbXXaMrVXa-286-22.png)  
-左侧的 `helloworld@starterkit` 是编译目标，格式遵循 `应用名字@目标板名字` 的规则，点击它可以依次选择应用和目标板。  
-![](https://img.alicdn.com/tfs/TB1Rt2gpwmTBuNjy1XbXXaMrVXa-2032-1170.png)
+
+2. 所有功能都集中在下方工具栏中，小图标从左至右功能分别是 `编译` `烧录` `串口工具` `清除`：
+
+![](https://img.alicdn.com/tfs/TB1QmxlLrvpK1RjSZPiXXbmwXXa-452-37.jpg)
+
+左侧的 `helloworld@developerkit` 是编译目标，格式遵循 `应用名字@目标板名字` 的规则，点击它可以依次选择应用和目标板。  
+
 3. 编译目标确定以后，点击 ![](https://img.alicdn.com/tfs/TB1qR_UpuSSBuNjy0FlXXbBpVXa-24-22.png) 开始编译。  
-编译过程如果发现缺少 toolchain 则会自动下载解压到正确位置。
+
+![](https://img.alicdn.com/tfs/TB1bUxrLwHqK1RjSZFgXXa7JXXa-1140-820.gif)
 
 #### 烧录到目标板
 
-1. 通过 USB Micro 线缆连接好 Starter Kit 与电脑
+1. 通过 USB Micro 线缆连接好开发板与电脑
 2. 点击下方工具栏闪电图标完成固件烧录
-![](https://img.alicdn.com/tfs/TB1YOvEprGYBuNjy0FoXXciBFXa-2032-1170.png)
+
+![](https://img.alicdn.com/tfs/TB1iq8rLr2pK1RjSZFsXXaNlXXa-1140-820.gif)
 
 #### 串口工具
 
