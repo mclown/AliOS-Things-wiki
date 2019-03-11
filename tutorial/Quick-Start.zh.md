@@ -29,10 +29,23 @@ $ pip install aos-cube
 ```
 > 请确认`pip`环境是基于 Python 2.7 的。如果遇到权限问题，可能需要 `sudo` 来执行。
 
-## 下载代码并编译运行
+## 下载代码
 
 ```bash
 git clone https://github.com/alibaba/AliOS-Things.git
+```
+
+## 编译运行
+
+AliOS Things 2.1及其后续版本(需要aos-cube 0.3.x)
+```bash
+cd AliOS-Things
+aos make helloworld@linuxhost -c config && aos make
+./out/helloworld@linuxhost/binary/helloworld@linuxhost.elf
+```
+
+AliOS Things 2.0及之前的版本：
+```bash
 cd AliOS-Things
 aos make helloworld@linuxhost
 ./out/helloworld@linuxhost/binary/helloworld@linuxhost.elf

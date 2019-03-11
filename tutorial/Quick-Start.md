@@ -37,10 +37,23 @@ $ pip install --upgrade aos-cube
 ```
 **`Note:`** Please make sure `esptool, pyserial, scons` and `aos-cube` are installed sucessfully when run `pip install aos-cube`, or you can install them one by one if you meet problems.
 
-## Run
+## Download Sources
 
 ```bash
 git clone https://github.com/alibaba/AliOS-Things.git
+```
+
+## Build and Run
+
+For AliOS Things 2.1 and later releases (aos-cube 0.3.x required):
+```bash
+cd AliOS-Things
+aos make helloworld@linuxhost -c config && aos make
+./out/helloworld@linuxhost/binary/helloworld@linuxhost.elf
+```
+
+For AliOS Things 2.0 and former releases:
+```bash
 cd AliOS-Things
 aos make helloworld@linuxhost
 ./out/helloworld@linuxhost/binary/helloworld@linuxhost.elf
