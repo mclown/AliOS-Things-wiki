@@ -126,11 +126,11 @@ if AOS_APP_HELLOWORLD
 # Configurations for app helloworld    # 如有必要，定义更多组件内配置选项
 endif
 ```
-组件配置选项命名规范：使用前缀“AOS_APP_” + 组件NAME
-将新增example加入系统配置菜单:
-	如果新增example在“app/exampe”目录下，编辑“app/exampe/Config.in”
-	如果新增example在“app/profile”目录下，编辑“app/profile/Config.in”
-例如：
+组件配置选项命名规范：使用前缀“AOS_APP_” + 组件NAME  
+将新增example加入系统配置菜单:  
+	如果新增example在“app/exampe”目录下，编辑“app/exampe/Config.in”  
+	如果新增example在“app/profile”目录下，编辑“app/profile/Config.in”  
+例如：  
 ```
 source "app/example/helloworld/Config.in"   # 引用example配置文件
 if AOS_APP_HELLOWORLD                       # 如果example组件被启用
