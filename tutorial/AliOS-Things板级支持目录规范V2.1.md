@@ -531,9 +531,9 @@ Things提供了基本的内核测试用例集，用于内核移植后的测试�
 
 ```
 /*以下字符定义可任取名字，不能为空*/
-#define SYSINFO_ARCH        " unknown"                    
-#define SYSINFO_MCU         " unknown"
-#define SYSINFO_DEVICE_NAME " unknown"
+#define SYSINFO_ARCH        "unknown"                    
+#define SYSINFO_MCU         "unknown"
+#define SYSINFO_DEVICE_NAME "unknown"
 #define SYSINFO_APP_VERSION "2.1.0"
 
 /*kv和yloop不属于纯krhino模块，需要关闭*/
