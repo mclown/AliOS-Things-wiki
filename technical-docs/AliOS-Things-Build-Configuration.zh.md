@@ -1,4 +1,4 @@
-[EN](AliOS-Things-Build-Configure) | 中文
+[EN](AliOS-Things-Build-Configuration) | 中文
 
 # AliOS Things 2.1构建与配置
 
@@ -119,8 +119,8 @@ endif
 
 注意：“AOS_BUILD_BOARD”默认值必须与配置命令行（aos make app@board -cconfig）输入的board保持一致。
 
-### example Config.in文件编写
-example Config.in文件编写规范（以helloworld为例）：
+### app Config.in文件编写
+app Config.in文件编写规范（以helloworld为例）：
 
 ```
 config AOS_APP_HELLOWORLD              # 定义组件配置选项
@@ -134,24 +134,23 @@ if AOS_APP_HELLOWORLD
 endif
 ```
 
-mcu组件配置选项命名规范：
+app组件配置选项命名规范：
 * 使用前缀“AOS_APP_” + 组件NAME（省略NAME中包含“app_”前缀）
 * 同arch配置选项命名规范
 
-### 将example加入系统配置菜单
+### 将app加入系统配置菜单
 与新增Board类似：
 
 * 如果新增example在“app/exampe”目录下，编辑“app/exampe/Config.in”
 * 如果新增example在“app/profile”目录下，编辑“app/profile/Config.in”
-* 如果新增example在“test/develop”目录下，编辑“test/develop/Config.in”
 
 例如：
 
 ```
-source "app/example/helloworld/Config.in"   # 引用example配置文件
-if AOS_APP_HELLOWORLD                       # 如果example组件被启用
+source "app/example/helloworld/Config.in"   # 引用app配置文件
+if AOS_APP_HELLOWORLD                       # 如果app组件被启用
     config AOS_BUILD_APP
-        default "helloworld"                # 为AOS_BUILD_APP赋值，与example目录一致
+        default "helloworld"                # 为AOS_BUILD_APP赋值，与app目录一致
 endif
 ```
 
