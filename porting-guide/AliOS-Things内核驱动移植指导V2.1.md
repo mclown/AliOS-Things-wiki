@@ -292,7 +292,7 @@ include $($(NAME)_LOCATION)/$(HOST_MCU_NAME).mk
 ```
 **aos**.mk其他必须包含项：
 ```
-NAME := mcu_aamcu_demo                     #主MCU名，需要和目录名一致  
+NAME := mcu_aamcu_demo                     #主MCU名，一般是mcu_+当前mcu目录名  
 $(NAME)_MBINS_TYPE  := kernel              #多bin情况下，归属kernel还是app
 $(NAME)_VERSION     := 1.0.0               #menuconfig组件版本号
 $(NAME)_SUMMARY     := driver & sdk        #描述               
