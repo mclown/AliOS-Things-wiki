@@ -194,6 +194,7 @@ $ docker-machine ip
 
 #### 配置docker_usb设备
 注：如果无烧录需求， 可忽略此步骤
+
 1）打开Docker Quickstart Terminal （Mac时，可直接使用mac terminal），停止缺省虚拟机：
 ```plain
 $ docker-machine stop default
