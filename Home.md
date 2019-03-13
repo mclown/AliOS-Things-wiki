@@ -33,6 +33,7 @@ Please refer to [AliOS Things Technical Overview](AliOS-Things-Technical-Overvie
 - [C-SKY](AliOS-Things-Hardware#c-sky)
 - [Renesas](AliOS-Things-Hardware#renesas)
 - [Linux simulation](AliOS-Things-Hardware#linux)
+- [Keil/IAR Support](AliOS-Things-Keil-IAR.zh)
 
 ## [Porting Guide](AliOS-Things-Porting-Guide)
 - [Components](AliOS-Things-Porting-Guide)
