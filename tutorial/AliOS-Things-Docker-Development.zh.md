@@ -110,7 +110,7 @@ __注意：__
 ```plain
 $ docker container start -ia alios-docker
 ```
- 2）需要烧录设备时， 参考Windows场景二中的 [配置docker usb设备](#配置docker usb设备)，docker启动时，无需-v参数
+ 2）需要烧录设备时， 参考Windows场景二中的[USB设备配置](#配置docker_usb设备)，docker启动时，无需-v参数
 
 ### 适用场景二：代码编辑和调试在windows，编译和烧录在docker下进行
 与场景一比较，需要建立共享目录，完成代码在两种环境中的共享。
@@ -144,6 +144,7 @@ C:/Program Files/Oracle/VirtualBox/VBoxManage.exe sharedfolder remove default --
 ```
 
 __方式二：利用samba服务的docker__
+
 1）__创建存储volume__, 便于与docker下的目录共享：
 ```plain
 $ docker volume create --name aos-vol
