@@ -7,6 +7,7 @@ EN | [中文](AliOS-Things-Environment-Setup.zh)
 
 # 1 System environment setup
 
+- [Docker](AliOS-Things-Docker-Environment-Setup)
 - [Windows](AliOS-Things-Windows-Environment-Setup)
 - [Linux](AliOS-Things-Linux-Environment-Setup)
 - [MAC](AliOS-Things-MAC-Environment-Setup)
