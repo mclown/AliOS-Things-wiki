@@ -8,7 +8,7 @@
 - [Add a New Board Example](Add-a-new-board-example)
 - [Add a New Component Example](Add-a-new-component-example)
 - [Environment Setup](AliOS-Things-Environment-Setup)
-  - [Docker](AliOS-Things-Docker-Development.zh)
+  - [Docker](AliOS-Things-Docker-Environment-Setup)
   - [Linux](AliOS-Things-Linux-Environment-Setup)
   - [Mac](AliOS-Things-MAC-Environment-Setup)
   - [Windows](AliOS-Things-Windows-Environment-Setup)
