@@ -1,5 +1,8 @@
 ## 0，背景
-* **Developerkit**的wifi模组固件存在bug（网络断开问题），需要升级wifi固件才能解决该问题。**wifi固件升级**分**两种**情况：1，需要升级**boot**和**wifi固件**；2，**仅**需要升级**wifi固件**(无需升级boot)。
+* **Developerkit**的wifi模组固件存在bug（网络断开问题），需要升级wifi固件才能解决该问题。  
+   **wifi固件升级**分**两种**情况：  
+   1，需要升级**boot**和**wifi固件**；  
+   2，**仅**需要升级**wifi固件**(无需升级boot)。  
 * **请先查看 1.2节中判断需要何种升级，再查看第2节中的升级。**
 * 本文档配合[开发板入口](https://github.com/alibaba/AliOS-Things/wiki/Developer-Kit-Tutorial)介绍中所提的wifi模组升级。
 ## 1，准备
