@@ -9,11 +9,12 @@
    * **注：两个串口分别是：MCU调试串口，wifi模组调试串口**  
  
    ![1](https://img.alicdn.com/tfs/TB1FPlOxhjaK1RjSZFAXXbdLFXa-937-722.png) 
-   ![2](https://img.alicdn.com/tfs/TB1_GXGxgHqK1RjSZFkXXX.WFXa-1328-1007.png)   
+   ![2](https://img.alicdn.com/tfs/TB1xIXKMcbpK1RjSZFyXXX_qFXa-1417-1015.png)   
 #### 1.2，判断哪种升级方式：
 1. 恢复MCU出厂设置，出厂固件：00_recovery_factroy（软件包中）
 2. 打开串口工具（请使用软件包中的串口工具）查看wifi模组版本号，MCU串口中**输入命令：** AT+FWVER?\r 
-        ![3](https://img.alicdn.com/tfs/TB1LM80xhjaK1RjSZKzXXXVwXXa-827-444.png) 
+        ![3](https://img.alicdn.com/tfs/TB1LM80xhjaK1RjSZKzXXXVwXXa-827-444.png)  
+ 
 **结果：** 若上述查看的wifi固件号为：APP-1.0.0-20180409.1719，则需要**升级boot和wifi固件**；如wifi版本号（时间戳）大于该号，则**仅需要升级wifi**固件。
 
 
@@ -23,8 +24,12 @@
    * **连接wifi**，MCU串口中**输入命令：** AT+WJAP=SSID,PASSWORD\r 请使用正确的wifi用户名和密码
        ![4](https://img.alicdn.com/tfs/TB1ppXxxjTpK1RjSZKPXXa3UpXa-816-517.png)
    * **FOTA升级**，wifi连接正常后，本地电脑（**需连接同一个wifi**）打开01_boot_update（软件包）中的hfs，并将软件包中的boot_up_180615.bin拖入到hfs的左侧，并记录下正确的IP地址，如下图。在MCU串口中**输入命令：** AT+FOTA=619786,app-1.0.8-20180620.2010,http://**192.168.1.107**/boot_up_180615.bin,4821682ac03b9e23a68914021ea0d2e7\r   其中IP地址更新成实际的地址，执行后请稍微等一会（nfs中会有传输记录）
-![5](https://img.alicdn.com/tfs/TB1zYxwxgDqK1RjSZSyXXaxEVXa-1749-647.png) 
-    * **升级boot**，在wifi串口中**输入(wifi模组串口)命令：**  txevm -e 3\r  如下图，完成boot升级
+![5](https://img.alicdn.com/tfs/TB1zYxwxgDqK1RjSZSyXXaxEVXa-1749-647.png)   
+
+     注意：请将nfs.exe加入防火墙的白名单中，如下图。
+![](https://img.alicdn.com/tfs/TB1DnpBMmzqK1RjSZPxXXc4tVXa-876-578.png)   
+
+ * **升级boot**，在wifi串口中**输入(wifi模组串口)命令：**  txevm -e 3\r  如下图，完成boot升级
   ![6](https://img.alicdn.com/tfs/TB1EBFCxXzqK1RjSZFCXXbbxVXa-537-722.png) 
 	* **完成后关闭串口和断开电源**
 #### 2.2, 升级wifi固件  
