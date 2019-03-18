@@ -74,7 +74,7 @@ $ docker container start -ia alios-docker
 为其命名alios-docker，并指定本机与docker的目录映射关系：
 使用-v 参数  -v <本机代码所在目录名>:<docker中映射名>
 ```plain
-$ docker run -it --name alios-docker -v /Users/xxx/alios:/workspace reg.docker.alibaba-inc.com/alios_things/rtos_dev bin/bash
+$ docker run -it --name alios-docker -v /Users/xxx/alios:/workspace registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bin/bash
 ```
 至此，可以达到对/Users/xxx/alios中的代码进行本地编辑和调试，而编译时， 转入docker中的/workspace下，执行 aos make <app>@<board>
 
