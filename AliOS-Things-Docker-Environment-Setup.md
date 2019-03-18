@@ -47,7 +47,7 @@ $ docker pull registry.cn-hangzhou.aliyuncs.com/alios_things/rtos:latest
 #### 启动docker
 为其命名alios-docker：
 ```plain
-$ docker run -it --name alios-docker reg.docker.alibaba-inc.com/alios_things/rtos_dev bin/bash
+$ docker run -it --name alios-docker registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bin/bash
 ```
 #### 获取代码
 1) 组件化工具获取：按需选择适当组件获取需要的代码
@@ -97,7 +97,7 @@ $ docker pull registry.cn-hangzhou.aliyuncs.com/alios_things/rtos:latest
 ```
 #### 启动docker
 ```plain
-$ docker run -it --name alios-docker reg.docker.alibaba-inc.com/alios_things/rtos_dev bash
+$ docker run -it --name alios-docker registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bash
 ```
 #### 获取代码
 1) 组件化工具获取：按需选择适当组件获取需要的代码
@@ -223,7 +223,7 @@ $ dmesg | grep1 usb
  
 5）欲使用usb设备的功能，启动docker时需添加新的启动参数--privileged，而-v参数根据目录共享需要添加：
 ```plain
-$ docker run -it --privileged --name alios-things -v /d/work:/workspace/ reg.docker.alibaba-inc.com/alios_things/rtos_dev bash
+$ docker run -it --privileged --name alios-things -v /d/work:/workspace/ registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bash
 ```
 
 6）编译代码，使用aos命令烧写: 比如烧写适配developerkit板子的helloworld应用的image：
