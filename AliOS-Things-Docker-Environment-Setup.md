@@ -20,7 +20,7 @@ $ docker pull registry.cn-hangzhou.aliyuncs.com/alios_things/rtos:latest
 
 为其命名alios-docker: 
 ```plain
-$ docker run -it --name alios-docker registry.cn-hangzhou.aliyuncs.com/alios_things/rtos /bin/bash
+$ docker run -it --privileged --name alios-docker registry.cn-hangzhou.aliyuncs.com/alios_things/rtos /bin/bash
 ```
 __注意：__
 1）退出docker后，可用以下命令重新启动已有docker：
@@ -47,7 +47,7 @@ $ docker pull registry.cn-hangzhou.aliyuncs.com/alios_things/rtos:latest
 #### 启动docker
 为其命名alios-docker：
 ```plain
-$ docker run -it --name alios-docker registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bin/bash
+$ docker run -it --privileged --name alios-docker registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bin/bash
 ```
 #### 获取代码
 1) 组件化工具获取：按需选择适当组件获取需要的代码
@@ -74,7 +74,7 @@ $ docker container start -ia alios-docker
 为其命名alios-docker，并指定本机与docker的目录映射关系：
 使用-v 参数  -v <本机代码所在目录名>:<docker中映射名>
 ```plain
-$ docker run -it --name alios-docker -v /Users/xxx/alios:/workspace registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bin/bash
+$ docker run -it --privileged --name alios-docker -v /Users/xxx/alios:/workspace registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bin/bash
 ```
 至此，可以达到对/Users/xxx/alios中的代码进行本地编辑和调试，而编译时， 转入docker中的/workspace下，执行 aos make <app>@<board>
 
@@ -97,7 +97,7 @@ $ docker pull registry.cn-hangzhou.aliyuncs.com/alios_things/rtos:latest
 ```
 #### 启动docker
 ```plain
-$ docker run -it --name alios-docker registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bash
+$ docker run -it --privileged --name alios-docker registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bash
 ```
 #### 获取代码
 1) 组件化工具获取：按需选择适当组件获取需要的代码
@@ -134,7 +134,7 @@ $ exit
 ```
 2）退出后回到windows命令行，启动AliOS docker：
 ```plain
-$ docker run -it --name alios-docker -v /d/work:/workspace/ registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bash
+$ docker run -it --privileged --name alios-docker -v /d/work:/workspace/ registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bash
 ```
 这样就启动了一个AliOS Things的docker, 之后可以在docker环境里进行编译开发.
 
@@ -152,7 +152,7 @@ $ docker volume create --name aos-vol
 
 2）__启动docker__：为其命名alios-docker，并-v指定volume目录映射到docker中的/workspace
 ```plain
-$ docker run -it -p445:445 --name alios-docker -v aos-vol:/workspace/ registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bash
+$ docker run -it --privileged -p445:445 --name alios-docker -v aos-vol:/workspace/ registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bash
 ```
 
 3）__安装samba并配置,   __此时已进入docker环境：
@@ -221,7 +221,7 @@ $ dmesg | grep1 usb
 [   19.942282] usb 1-2: cp210x converter now attached to ttyUSB0
 ```
  
-5）欲使用usb设备的功能，启动docker时需添加新的启动参数--privileged，而-v参数根据目录共享需要添加：
+5）欲使用usb设备的功能，启动docker时必须添加参数--privileged，而-v参数根据目录共享需要添加：
 ```plain
 $ docker run -it --privileged --name alios-things -v /d/work:/workspace/ registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bash
 ```
