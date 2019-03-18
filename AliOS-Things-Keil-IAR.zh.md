@@ -1,6 +1,6 @@
 # Keil/IAR 工程支持列表
 
-**在组件化web页面(待发布)上选且只选了一个board和一个app组件时，才可以选择用keil或者iar的形式下载！**
+**在[组件化web页面](https://aliosthings.iot.aliyun.com/aos/download)上选且只选了一个board和一个app组件时，才可以选择用keil或者iar的形式下载！**
 
 目前AliOS Things可支持以下board的keil/IAR工程文件输出：
 
