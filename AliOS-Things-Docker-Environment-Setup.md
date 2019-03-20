@@ -50,7 +50,7 @@ $ docker pull registry.cn-hangzhou.aliyuncs.com/alios_things/rtos:latest
 $ docker run -it --privileged --name alios-docker registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bin/bash
 ```
 #### 获取代码
-1) 组件化工具获取：按需选择适当组件获取需要的代码
+1) [组件化工具](https://aliosthings.iot.aliyun.com/aos/download)获取：按需选择适当组件获取需要的代码
      本地zip文件，或 wget http链接(根据所选组件生成源码下载的链接) 获取
 2) github获取：将获取全量代码，不推荐
       git clone命令
@@ -69,7 +69,7 @@ $ docker container start -ia alios-docker
 #### 获取docker镜像
 同上
 #### 获取代码
-推荐组件化工具获取，将zip包解压到本机某个目录下， 如 /Users/xxx/alios
+推荐[组件化工具](https://aliosthings.iot.aliyun.com/aos/download)获取，将zip包解压到本机某个目录下， 如 /Users/xxx/alios
 #### 启动docker
 为其命名alios-docker，并指定本机与docker的目录映射关系：
 使用-v 参数  -v <本机代码所在目录名>:<docker中映射名>
@@ -100,7 +100,7 @@ $ docker pull registry.cn-hangzhou.aliyuncs.com/alios_things/rtos:latest
 $ docker run -it --privileged --name alios-docker registry.cn-hangzhou.aliyuncs.com/alios_things/rtos bash
 ```
 #### 获取代码
-1) 组件化工具获取：按需选择适当组件获取需要的代码
+1) [组件化工具](https://aliosthings.iot.aliyun.com/aos/download)获取：按需选择适当组件获取需要的代码
     本地zip文件，或 wget http链接(根据所选组件生成源码下载的链接) 获取
 2) github获取：将获取全量代码，不推荐
      git clone命令
@@ -119,7 +119,7 @@ $ docker container start -ia alios-docker
 #### 获取docker镜像
 同上
 #### 获取代码
-推荐组件化工具获取，将zip包解压到本机某个目录下， 如d:\work
+推荐[组件化工具](https://aliosthings.iot.aliyun.com/aos/download)获取，将zip包解压到本机某个目录下， 如d:\work
 #### 启动docker, 带目录共享能力
 __方式一：创建共享目录的docker__
  执行如下脚本，按要求copy命令并执行后即可
