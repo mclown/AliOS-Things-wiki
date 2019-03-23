@@ -3,7 +3,7 @@ EN | [中文](contributing.zh)
 ## Contributing
 
 1. Fork [alibaba/AliOS-Things](https://github.com/alibaba/AliOS-Things) to your GitHub account.
-2. Clone **your** AliOS-Things to local.
+2. Use [Component Tool](https://aliosthings.iot.aliyun.com/aos/download) to get minimal code to local, or Clone **your** AliOS-Things to local.
 3. Make changes locally and push to remote -> **your** AliOS-Things
 4. Create a `pull request` and waiting for the maintainers to review & merge.
 5. Sign [CLA - https://cla-assistant.io/alibaba/AliOS-Things](https://cla-assistant.io/alibaba/AliOS-Things)
