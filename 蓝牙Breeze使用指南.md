@@ -16,7 +16,8 @@ AliOS Things实现了一套基于蓝牙链路的轻量级安全通路的Breeze S
 ├── api
 ├── core
 ├── include
-└── ref-impl`
+└── ref-impl
+```
 
 其中:
 Config.in //配合meunconfig组件配置
