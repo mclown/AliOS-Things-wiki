@@ -102,7 +102,18 @@ menuconfig具体重要配置点:
 ![hello_print](https://img.alicdn.com/tfs/TB1lijEOMHqK1RjSZFPXXcwapXa-1244-302.png)
 
 * 手机客户端测试(以IOS为例)
-* * 登录账号，注意环境需要与设备端五元组信息匹配。
-* * 打开主界面并扫描蓝牙设备。
-* * 点击并连接,界面会有连接成功和安全通道建立提示。
-* * 通过手机端发送数据，设备端回传数据，手机界面会有提示和hex数据显示。
+ * 登录账号，注意环境需要与设备端五元组信息匹配。
+ * 打开主界面并扫描蓝牙设备。
+ * 点击并连接,界面会有连接成功和安全通道建立提示。
+ * 通过手机端发送数据，设备端回传数据，手机界面会有提示和hex数据显示。
+
+![discover_1](https://img.alicdn.com/tfs/TB1alTtOSrqK1RjSZK9XXXyypXa-936-1620.png)
+
+![connected](https://img.alicdn.com/tfs/TB1_mfwOSzqK1RjSZPxXXc4tVXa-928-1616.png)
+
+# 设备端高级应用场景开发指南
+在SDK基础建立安全通道基础上，主要有以下两应用场景:1)蓝牙辅助Wifi配网  2)设备OTA。
+
+## 蓝牙辅助配网
+
+## Breeze设备OTA
