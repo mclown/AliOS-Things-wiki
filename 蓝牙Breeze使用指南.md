@@ -60,4 +60,49 @@ menuconfig具体重要配置点:
 * 链路认证:Breeze链路安全认证。
 * 使用默认对接配置:OS使用AliOS Things，Security算法使用内部加密算法，蓝牙使用Blestack。
 
+## 移植Breeze到第三方平台
+参见源代码目录下的ref-impl，将第三方的实现替换此文件夹下的HAL实现:1)OS; 2)BLE协议栈; 3)Security，定义在`$(AliOS Things Src)/network/bluetooth/breeze/include`下，其余部分代码和应用维持不变。
+* breeze_hal_ble:对接BLE蓝牙协议栈部分接口，包含蓝牙广播，注册Breeze蓝牙服务等。
+* breeze_hal_sec:对接安全部分，包含AES128 CBC加解密算法，SHA256接口。
+* breeze_hal_os:对接不同OS的接口，包含OS timer的资源, KV(存储和读取接口)操作等。
+详细接口定义和说明详见<HAL接口列表>
 
+# API接口列表
+
+
+# HAL接口列表
+
+
+# 调试入云信息和环境搭建
+## 设备信息申请
+由于设备最终要通过云端认证，所以需要申请在云端申请对应的产品认证信息
+* 创建项目，登录阿里云IoT智能生活开放平台，https://living.aliyun.com/#/，点击"创建项目"
+
+![create_product](https://img.alicdn.com/tfs/TB1HlfAOOrpK1RjSZFhXXXSdXXa-2366-1054.png)
+
+* 新建产品，在产品界面，点击"新建产品",注意选择节点类型为"设备",是否接入"是"，并接入网关协议为"BLE"
+
+![cfg_product](https://img.alicdn.com/tfs/TB1K6bGOFzqK1RjSZFCXXbbxVXa-1910-1360.png)
+
+* 在产品定义界面右边可以看到产品的三个信息:Product Key, Product Secret和Product ID，这对于一型一密设备来说已经足够，但一机一密还需要继续点击"设备调试"
+
+![3elements](https://img.alicdn.com/tfs/TB1hgS4OSzqK1RjSZPcXXbTepXa-2580-1300.png)
+
+* 在设备调试界面，点击"新增测试设备",继续生成对应同一类型产品的多个设备，根据"DeviceName"进行区分，Device Secret,至此一机一密需要的五个元素信息都已经获得
+
+![devname](https://img.alicdn.com/tfs/TB14SjDOFzqK1RjSZFoXXbfcXXa-2432-1256.png)
+
+![new_product_success](https://img.alicdn.com/tfs/TB1s8zHOQPoK1RjSZKbXXX1IXXa-750-407.jpg)
+
+## 调试环境搭建
+测试用例主要使用Breezeapp并配合手机客户端demo进行测试。
+* 编译breezeapp应用。在app/example/bluetooth/breezeapp/breezeapp.c中，将设备信息修改为上一步申请到的元组信息，参考前面编译部分。
+* 烧录固件至设备，并连接串口终端会有如下类似信息(Breeze信息，蓝牙MAC地址，AOS版本等)打印:
+
+![hello_print](https://img.alicdn.com/tfs/TB1lijEOMHqK1RjSZFPXXcwapXa-1244-302.png)
+
+* 手机客户端测试(以IOS为例)
+* * 登录账号，注意环境需要与设备端五元组信息匹配。
+* * 打开主界面并扫描蓝牙设备。
+* * 点击并连接,界面会有连接成功和安全通道建立提示。
+* * 通过手机端发送数据，设备端回传数据，手机界面会有提示和hex数据显示。
