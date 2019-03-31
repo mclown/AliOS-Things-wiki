@@ -11,18 +11,12 @@ AliOS Things实现了一套基于蓝牙链路的轻量级安全通路的Breeze S
 组件代码位于`$(AliOS Things Src)/network/bluetooth/breeze`，如下：
 ```.
 ├── Config.in
-
 ├── README.md
-
 ├── aos.mk
-
 ├── api
-
 ├── core
-
 ├── include
-
-└── ref-impl```
+└── ref-impl`
 
 其中:
 Config.in //配合meunconfig组件配置
