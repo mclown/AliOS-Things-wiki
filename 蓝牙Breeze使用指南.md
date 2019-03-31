@@ -116,4 +116,6 @@ menuconfig具体重要配置点:
 
 ## 蓝牙辅助配网
 
+[蓝牙辅助配网详细说明。](https://github.com/alibaba/AliOS-Things/wiki/蓝牙辅助WiFi配网开发说明)
+
 ## Breeze设备OTA
