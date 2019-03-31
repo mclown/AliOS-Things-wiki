@@ -36,6 +36,12 @@ AliOS Things实现了一套基于蓝牙链路的轻量级安全通路的Breeze S
 $aos make breezeapp@pca10040 -c config
 $aos make 
 ```
-
-
+* 如果想要修改配置，可通过menuconfig来修改并编译
+```
+$aos make menuconfig
+$aos make
+```
+menuconfig具体重要配置点:
+* Application Configuration 界面勾选"Builtin Examples" -> "breezeapp", 根据需要勾选"Enable OTA with Breeze Link"
+![app_pic](https://img.alicdn.com/tfs/TB1s_fEOHrpK1RjSZTEXXcWAVXa-970-784.png)
 
