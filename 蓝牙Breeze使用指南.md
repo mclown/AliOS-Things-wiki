@@ -43,5 +43,21 @@ $aos make
 ```
 menuconfig具体重要配置点:
 * Application Configuration 界面勾选"Builtin Examples" -> "breezeapp", 根据需要勾选"Enable OTA with Breeze Link"
+
 ![app_pic](https://img.alicdn.com/tfs/TB1s_fEOHrpK1RjSZTEXXcWAVXa-970-784.png)
+
+* BSP Configuration,选择需要的硬件平台，如pca10040
+
+![board_cfg](https://img.alicdn.com/tfs/TB107PEOMHqK1RjSZFEXXcGMXXa-932-766.png)
+
+* Network Configuration，选择"Breeze SDK",在子菜单会有对应一下选项分别对应：
+
+![network_cfg](https://img.alicdn.com/tfs/TB1koPyOH2pK1RjSZFsXXaNlXXa-925-733.png)
+
+* 连续安全广播:用以特定安全广播，需配合云端一起使用。
+* 设备入网加密方式选择: 一型一密和一机一密设备认证选择。
+* 辅助配网功能:用来使能辅助配网相关的配置。
+* 链路认证:Breeze链路安全认证。
+* 使用默认对接配置:OS使用AliOS Things，Security算法使用内部加密算法，蓝牙使用Blestack。
+
 
