@@ -119,3 +119,48 @@ menuconfig具体重要配置点:
 [蓝牙辅助配网详细说明。](https://github.com/alibaba/AliOS-Things/wiki/蓝牙辅助WiFi配网开发说明)
 
 ## Breeze设备OTA
+在SDK使能OTA情况下，手机Breeze SDK拉取云端的将要升级的固件，通过建立的Breeze通道将设备固件分包传输至设备端，设备端按照OTA的交互对写入对应FLASH分区，完成之后重启设备结束整个OTA流程。
+## OTA编译配置
+可以参考breezeapp事例，默认已经使能OTA功能。如果使用meunconfig的话需要确认如下设置:
+* APP, Application Configuration-> Selete APP(Builtin Examples) -> breezeapp -> enable ota with breeze link
+
+![ota_1](https://img.alicdn.com/tfs/TB1DobDONTpK1RjSZFMXXbG_VXa-1492-791.jpg)
+
+* Middleware Configuration ->uAgent ->OTA ->ota_ble
+
+![ota_2](https://img.alicdn.com/tfs/TB1fSHOONjaK1RjSZFAXXbdLFXa-1492-786.jpg)
+
+## OTA对接移植
+OTA模块代码实现在middleware/uagent/ota/ota_ble下，包含:
+
+```
+.
+├── aos.mk
+├── Config.in
+├── inc
+│   ├── ota_breeze_export.h
+│   ├── ota_breeze.h
+│   ├── ota_breeze_os.h
+│   ├── ota_breeze_plat.h
+│   └── ota_breeze_transport.h
+├── README.md
+└── src
+    ├── ota_breeze.c
+    ├── ota_breeze_os.c
+    ├── ota_breeze_plat.c
+    ├── ota_breeze_service.c
+    └── ota_breeze_transport.c
+```
+
+其中:
+* inc:包含了对外的接口和对接API。
+* src:OTA内部逻辑的实现。
+
+# 支持硬件列表
+截止到AliOS Things 2.1版本，支持Breeze SDK以及高级特性的硬件平台汇总如下:
+
+![support_1](https://img.alicdn.com/tfs/TB1offchDZmx1VjSZFGXXax2XXa-865-339.jpg)
+
+蓝牙配网在硬件版本支持情况如下:
+
+![support_2](https://img.alicdn.com/tfs/TB1HrrzOSzqK1RjSZFLXXcn2XXa-1093-364.jpg)
