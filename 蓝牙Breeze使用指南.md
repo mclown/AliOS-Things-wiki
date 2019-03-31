@@ -1,18 +1,28 @@
 # 背景介绍
 设备硬件具备蓝牙BLE能力，在与手机蓝牙连接后通过一套SDK建立安全通道，将数据推送给云端。如下:
+
 ![Breeze topology](https://img.alicdn.com/tfs/TB1mKLyOSzqK1RjSZFjXXblCFXa-516-208.png)
+
 AliOS Things实现了一套基于蓝牙链路的轻量级安全通路的Breeze SDK，结构框图如下:
+
 ![Breeze framework](https://img.alicdn.com/tfs/TB1pxjzONTpK1RjSZFMXXbG_VXa-1094-728.png)
 
 设备端Breeze SDK代码结构
 组件代码位于`$(AliOS Things Src)/network/bluetooth/breeze`，如下：
 `.
+
 ├── Config.in
+
 ├── README.md
+
 ├── aos.mk
+
 ├── api
+
 ├── core
+
 ├── include
+
 └── ref-impl`
 
 其中:
