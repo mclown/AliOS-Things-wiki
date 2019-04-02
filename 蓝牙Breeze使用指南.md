@@ -91,7 +91,7 @@ menuconfig具体重要配置点:
 
 ## <a name="66ce5462"></a>HAL接口列表
 
-详细定义和说明见【[蓝牙设备端SDK移植接口说明](https://yuque.antfin-inc.com/ilopdoc/guide/hmnca9)】。
+详细定义和说明见【[蓝牙设备端Breeze移植接口说明](https://github.com/alibaba/AliOS-Things/wiki/蓝牙设备端Breeze移植接口说明)】。
 
 ## <a name="c80b96d8"></a>调试入云信息和环境搭建
 
