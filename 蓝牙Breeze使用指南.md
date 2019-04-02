@@ -1,5 +1,3 @@
-# 蓝牙设备端开发指南
-
 ## <a name="c909ab32"></a>背景介绍
 
 阿里云IoT针对蓝牙设备，提供了一套Breeze方案，可以实现APP-设备-云的完整链路。
@@ -169,7 +167,6 @@ WiFi设备需要连接WiFi热点（WiFi AP）之后才能与其它设备进行IP
 
 - 产品注册。此部分请参考前面章节【调试入云信息和环境搭建】。
 - 设备移植。此部分请参考前面章节【移植SDK到第三方平台】。
-- 使用SDK/DemoSDK开发。详细指南可参阅【[蓝牙连接开发指南](https://yuque.antfin-inc.com/ilopdoc/guide/ruw3kk)】
 - 设备端蓝牙配网调试,使用aos menuconfig来配置:
 
 1. 修改linkkitapp，使能蓝牙配网: 应用目录位于`app/example/linkkitapp`下，默认linkkitapp的蓝牙配网功能是关闭的，需要使能蓝牙配网，选中"Enable Breeze AWSS"。
@@ -244,11 +241,7 @@ OTA模块代码实现在`middleware/uagent/ota/ota_ble`下，包含:
 - inc:包含了对外的接口和对接API。
 - src:OTA内部逻辑的实现。
 
-具体对接函数请参阅[【蓝牙设备端SDK OTA接口说明】](https://yuque.antfin-inc.com/ilopdoc/guide/kqgi8c)
-
-#### <a name="aeaec89a"></a>OTA调试和使用
-
-OTA的具体用法请参见[【蓝牙连接开发指南】](https://yuque.antfin-inc.com/ilopdoc/guide/ruw3kk)中“<span data-type="color" style="color:rgb(0, 0, 0)">运营中OTA配置”</span>章节；
+具体对接函数请参阅[【蓝牙设备端Breeze OTA接口说明】](https://github.com/alibaba/AliOS-Things/wiki/蓝牙设备端Breeze-OTA接口说明)
 
 ## <a name="adb9e6e5"></a>支持硬件列表
 
