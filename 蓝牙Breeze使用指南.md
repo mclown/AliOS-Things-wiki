@@ -187,8 +187,7 @@ WiFi设备需要连接WiFi热点（WiFi AP）之后才能与其它设备进行IP
 1. 注册并登录账号。
 2. 手机连接路由器，确保路由器可以连接阿里云。
 3. 根据配网信息生成二维码，可以在第三方二维码生成网站，如[https://cli.im/](https://cli.im/)，二维码格式如下:
-
-![19-1550125830503-0c3dbe00-5a00-4c3a-93cf-1afbeda1ca70.png | left | 422x133](https://cdn.nlark.com/yuque/0/2019/png/288262/1552368301989-837640b5-3f9f-4f04-a2d1-59b4b796b1b9.png "19-1550125830503-0c3dbe00-5a00-4c3a-93cf-1afbeda1ca70.png")
+{"pk":"xxxxx","dn":"xxxxxx","type":"5","pi":"xxxxx","pwd":"xxxxx"}
 
 1. 在XlinkSdkDemo底部菜单，"配网"->"统一配网"->"扫码方式配网"
 2. 进入二维码扫描界面，扫描上一步生成的包含设备和路由器信息的二维码。
@@ -200,7 +199,7 @@ WiFi设备需要连接WiFi热点（WiFi AP）之后才能与其它设备进行IP
 
 
 
-![21-1550125998385-b921c870-d72f-4191-8795-03074a622053.png | left | 408x843](https://cdn.nlark.com/yuque/0/2019/png/288262/1552368302048-87cc14c9-86f7-4b13-b008-65453181c333.png "21-1550125998385-b921c870-d72f-4191-8795-03074a622053.png")
+![21-1550125998385-b921c870-d72f-4191-8795-03074a622053.png | left | 408x843](https://img.alicdn.com/tfs/TB1MEtJPgHqK1RjSZFgXXa7JXXa-497-1026.png "21-1550125998385-b921c870-d72f-4191-8795-03074a622053.png")
 
 ### <a name="d00d9752"></a>Breeze设备OTA
 
