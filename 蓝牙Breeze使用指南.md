@@ -87,7 +87,7 @@ menuconfig具体重要配置点:
 
 ## <a name="a4fce0b4"></a>API接口列表
 
-详细定义和说明见【[蓝牙设备端SDK用户编程说明](https://yuque.antfin-inc.com/ilopdoc/guide/eyz31k)】。
+详细定义和说明见【[蓝牙设备端Breeze用户编程说明](https://github.com/alibaba/AliOS-Things/wiki/蓝牙设备端Breeze用户编程说明)】。
 
 ## <a name="66ce5462"></a>HAL接口列表
 
