@@ -288,7 +288,7 @@ HOST_MCU_NAME      := aamcu1_demo
 ```
 在mcu的主aos.mk中需要分别对子mcu进行引用，使用格式：
 ```
-include $($(NAME)_LOCATION)/$(HOST_MCU_NAME).mk
+include $($(NAME)_LOCATION)/aos.mk
 ```
 **aos**.mk其他必须包含项：
 ```
