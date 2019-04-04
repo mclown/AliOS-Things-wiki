@@ -1146,13 +1146,6 @@ API相关接口的具体描述以及其和FreeRTOS的对应接口关系。Rhino�
   lang=EN-US>aos_start</span></td>
   <td class=xl6710551 width=170 style='width:128pt'>内核启动进入任务调度</td>
  </tr>
- <![if supportMisalignedColumns]>
- <tr height=0 style='display:none'>
-  <td width=170 style='width:128pt'></td>
-  <td width=170 style='width:128pt'></td>
-  <td width=170 style='width:128pt'></td>
- </tr>
- <![endif]>
 </table>
 
 ### 3.9.2 具体接口详述
