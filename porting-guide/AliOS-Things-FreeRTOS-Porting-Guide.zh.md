@@ -1092,15 +1092,68 @@ API相关接口的具体描述以及其和FreeRTOS的对应接口关系。Rhino�
 
 ### 3.9.1 整体API对比
 
-| Aos接口         | FreeRTOS            | 说明                   |
-|-----------------|---------------------|------------------------|
-| aos_reboot      | 无                  | 重启单板               |
-| aos_get_hz      | configTICK_RATE_HZ  | 返回系统每秒tick频率   |
-| aos_version_get | 无                  | 返回内核版本号         |
-| aos_now         | 无                  | 返回内核启动至今的ns数 |
-| aos_now_ms      | 无                  | 返回内核启动至今的ms数 |
-| aos_init        | vTaskStartScheduler | 内核相关模块初始化     |
-| aos_start       |                     | 内核启动进入任务调度   |
+<table border=0 cellpadding=0 cellspacing=0 width=510 style='border-collapse:
+ collapse;table-layout:fixed;width:384pt'>
+ <col width=170 span=3 style='width:128pt'>
+ <tr height=21 style='height:15.6pt'>
+  <td height=21 class=xl6310551 width=170 style='height:15.6pt;width:128pt'><span
+  lang=EN-US>Aos<font class="font610551">接口</font></span></td>
+  <td class=xl6410551 width=170 style='width:128pt'><span lang=EN-US>FreeRTOS</span></td>
+  <td class=xl6510551 width=170 style='width:128pt'>说明</td>
+ </tr>
+ <tr height=42 style='height:31.8pt'>
+  <td height=42 class=xl6610551 width=170 style='height:31.8pt;width:128pt'><span
+  lang=EN-US>aos_reboot</span></td>
+  <td class=xl6710551 width=170 style='width:128pt'>无</td>
+  <td class=xl6810551 width=170 style='width:128pt'>重启单板</td>
+ </tr>
+ <tr height=59 style='height:44.4pt'>
+  <td height=59 class=xl6610551 width=170 style='height:44.4pt;width:128pt'><span
+  lang=EN-US>aos_get_hz</span></td>
+  <td class=xl6910551 width=170 style='width:128pt'><span lang=EN-US>configTICK_RATE_HZ</span></td>
+  <td class=xl6710551 width=170 style='width:128pt'>返回系统每秒<font
+  class="font510551">tick</font><font class="font610551">频率</font></td>
+ </tr>
+ <tr height=39 style='height:29.4pt'>
+  <td height=39 class=xl6610551 width=170 style='height:29.4pt;width:128pt'><span
+  lang=EN-US>aos_version_get</span></td>
+  <td class=xl6710551 width=170 style='width:128pt'>无</td>
+  <td class=xl6710551 width=170 style='width:128pt'>返回内核版本号</td>
+ </tr>
+ <tr height=59 style='height:44.4pt'>
+  <td height=59 class=xl6610551 width=170 style='height:44.4pt;width:128pt'><span
+  lang=EN-US>aos_now</span></td>
+  <td class=xl6710551 width=170 style='width:128pt'>无</td>
+  <td class=xl6710551 width=170 style='width:128pt'>返回内核启动至今的<font
+  class="font510551">ns</font><font class="font610551">数</font></td>
+ </tr>
+ <tr height=59 style='height:44.4pt'>
+  <td height=59 class=xl6610551 width=170 style='height:44.4pt;width:128pt'><span
+  lang=EN-US>aos_now_ms</span></td>
+  <td class=xl6710551 width=170 style='width:128pt'>无</td>
+  <td class=xl6710551 width=170 style='width:128pt'>返回内核启动至今的<font
+  class="font510551">ms</font><font class="font610551">数</font></td>
+ </tr>
+ <tr height=58 style='height:43.8pt'>
+  <td height=58 class=xl6610551 width=170 style='height:43.8pt;width:128pt'><span
+  lang=EN-US>aos_init</span></td>
+  <td rowspan=2 class=xl7010551 width=170 style='border-bottom:1.0pt solid black;
+  border-top:none;width:128pt'><span lang=EN-US>vTaskStartScheduler</span></td>
+  <td class=xl6710551 width=170 style='width:128pt'>内核相关模块初始化</td>
+ </tr>
+ <tr height=58 style='height:43.8pt'>
+  <td height=58 class=xl6610551 width=170 style='height:43.8pt;width:128pt'><span
+  lang=EN-US>aos_start</span></td>
+  <td class=xl6710551 width=170 style='width:128pt'>内核启动进入任务调度</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=170 style='width:128pt'></td>
+  <td width=170 style='width:128pt'></td>
+  <td width=170 style='width:128pt'></td>
+ </tr>
+ <![endif]>
+</table>
 
 ### 3.9.2 具体接口详述
 
