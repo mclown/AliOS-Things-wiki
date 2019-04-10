@@ -167,7 +167,10 @@ WiFi设备需要连接WiFi热点（WiFi AP）之后才能与其它设备进行IP
 
 - 产品注册。此部分请参考前面章节【调试入云信息和环境搭建】。
 - 设备移植。此部分请参考前面章节【移植SDK到第三方平台】。
-- 使用SDK/DemoSDK开发。详细指南可参阅[【蓝牙连接开发指南】](https://living.aliyun.com/doc#ruw3kk.html)
+- 使用SDK/DemoSDK开发
+Android手机SDK开发，请参考[【Android配网开发说明】](https://github.com/alibaba/AliOS-Things/wiki/Android-配网SDK开发说明)
+iOS手机SDK开发，请参考[【iOS配网开发说明】](https://github.com/alibaba/AliOS-Things/wiki/iOS配网开发说明)
+
 - 设备端蓝牙配网调试,使用aos menuconfig来配置:
 
 1. 修改linkkitapp，使能蓝牙配网: 应用目录位于`app/example/linkkitapp`下，默认linkkitapp的蓝牙配网功能是关闭的，需要使能蓝牙配网，选中"Enable Breeze AWSS"。
