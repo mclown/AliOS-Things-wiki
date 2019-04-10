@@ -203,6 +203,8 @@ WiFi设备需要连接WiFi热点（WiFi AP）之后才能与其它设备进行IP
 
 ![21-1550125998385-b921c870-d72f-4191-8795-03074a622053.png | left | 408x843](https://img.alicdn.com/tfs/TB1MEtJPgHqK1RjSZFgXXa7JXXa-497-1026.png "21-1550125998385-b921c870-d72f-4191-8795-03074a622053.png")
 
+Android DemoAPP详细请参考[【Android配网Demo使用】](https://github.com/alibaba/AliOS-Things/wiki/Android-配网-Demo-使用)，iOS DemoAPP详细请参考[【iOS配网Demo使用说明】](https://github.com/alibaba/AliOS-Things/wiki/iOS-配网Demo使用说明)。
+
 ### <a name="d00d9752"></a>Breeze设备OTA
 
 在SDK使能OTA情况下，手机Breeze SDK拉取云端的将要升级的固件，通过建立的Breeze通道将设备固件分包传输至设备端，设备端按照OTA的交互对写入对应FLASH分区，完成之后重启设备结束整个OTA流程。
