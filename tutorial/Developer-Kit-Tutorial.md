@@ -53,7 +53,7 @@
 | linkdevelop.device_ctrl | 设备控制  | developer分支，[文档](https://linkdevelop.aliyun.com/device-doc#aos-device_control.html)  |
 | linkdevelop.hmi  | 人机交互  | developer分支，[文档](https://linkdevelop.aliyun.com/device-doc#aos-hmi.html)  |
 
-
+>Note: 'PCIe接口 + 外扩4G/NB等模块' 参考[这里](https://github.com/alibaba/AliOS-Things/wiki/developerkit_pcie_page)
 ## 附录
 #### 参考视频教程
 
