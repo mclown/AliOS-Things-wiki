@@ -12,7 +12,7 @@
      * wifi模组固件升级，查看[这里](https://github.com/alibaba/AliOS-Things/wiki/wifi_upgrade_guide.md)确认是否需要升级
      * 熟悉其他诺行提供的开发板资料，若遇到开发板问题请在诺行钉钉群at群主唐浩寻求帮助
 
-* AliOS Things支持该开发板，并提供相关的应用示例（如下），由于该开发板**尚未**通过阿里[认证](https://github.com/AITC-LinkCertification/AITC-Manual/wiki/AliOS-Things%E8%AE%A4%E8%AF%81)，亦可查看AliOS Things支持的[更多开发板](https://github.com/alibaba/AliOS-Things/tree/master/board)
+* AliOS Things支持该开发板，并提供相关的[应用示例](#应用示例)，由于该开发板**尚未**通过阿里[认证](https://github.com/AITC-LinkCertification/AITC-Manual/wiki/AliOS-Things%E8%AE%A4%E8%AF%81)，亦可查看AliOS Things支持的[更多开发板](https://github.com/alibaba/AliOS-Things/tree/master/board)
 * 支持方式
    * 诺行开发板钉钉群（**负责开发板所有内容**，请直接联系群主唐浩）：  
         * 诺行开发板1~技术钉钉群，群号：23193725
@@ -38,9 +38,9 @@
 * 按键*3，分别是按键A, M, B
 * WIFI模组：BK7231。vendor:Beken  
 
-## AliOS Things开发准备
-* [开发环境搭建](https://linkdevelop.aliyun.com/device-doc#dev-prepare.html)，注：可使用IDE，也可以使用命令行。
-* 应用示例
+## AliOS Things
+#### [AliOS Things文档入口](https://dev.iot.aliyun.com/doc/detail/aliosthings/3.0.13#index.html)
+#### 应用示例
     >注：
      完成上述环境搭建后会了解到下面的命令，其中example是指具体的demo名称  
       * 编译命令 `aos make example@developerkit`   
