@@ -55,13 +55,5 @@
 
 >Note: 'PCIe接口 + 外扩4G/NB等模块' 参考[这里](https://github.com/alibaba/AliOS-Things/wiki/developerkit_pcie_page)
 ## 附录
-#### 参考视频教程
 
-* 1-Developer Kit开发板基本介绍	http://v.youku.com/v_show/id_XMzc2MDk2MDQ2OA==.html
-* 2-Developer Kit Interface介绍	http://v.youku.com/v_show/id_XMzc2MDk3NTI5Ng==.html
-* 3-Developer Kit 开发环境搭建 http://v.youku.com/v_show/id_XMzc2MDk3NTE3Ng==.html
-* 4-Developer Kit LinkKit Demo演示	http://v.youku.com/v_show/id_XMzc2MDk3NTMwNA==.html
-* 5-Developer Kit代码讲解和问题答疑	http://v.youku.com/v_show/id_XMzc2MDk4NzY3Ng==.html
-* 6-WIFI模组MW31实战操作	http://v.youku.com/v_show/id_XMzc2MDg4MDgwMA==.html
-* 7-Developer Kit板载WIFI升级指导	https://v.youku.com/v_show/id_XMzc1NjE4NzI2MA==.html?spm=a2hzp.8253869.0.0   
  
