@@ -1,15 +1,25 @@
 ## 注意
 > 本文主要介绍**Developer Kit开发板**相关内容，如果使用**Starter kit开发板**请查看[这里](https://github.com/alibaba/AliOS-Things/wiki/Starter-Kit-Tutorial.zh).  
 ## 介绍
-* Develoeprkit开发板由[诺行](http://www.notioni.com)负责设计/生产(**阿里提供OS，该板子处于[认证](https://github.com/AITC-LinkCertification/AITC-Manual/wiki/AliOS-Things%E8%AE%A4%E8%AF%81)过程中**)，需参照下述文档熟悉板载资源和硬件自测确保板子无任何硬件问题，如有疑问可在[诺行开发板钉钉群](https://img.alicdn.com/tfs/TB1S2XmgTZmx1VjSZFGXXax2XXa-585-881.jpg)沟通，如下： 
-    * [板子硬件资源](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things-Developer-Kit-Hardware-Guide)  
-    * [硬件自测文档](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things-Developer-Kit-User-Basic-Operation-Guide)
-    * [开发板原理图和生产软件bin文件](http://www.notioni.com/#/source)，恢复出厂设置方法：烧录出厂bin文件  
-    * wifi模组固件升级，查看[这里](https://github.com/alibaba/AliOS-Things/wiki/wifi_upgrade_guide.md)确认是否需要升级，参考[附录视频](#参考视频教程)升级或找诺行支持
+>职责1：诺行负责开发板所有内容，若涉及到诺行无法解答的AliOS Things相关问题，诺行有责任将其引导到下述OS的钉钉群，或用户自行搜索加入  
+>职责2：AliOS Things官方钉钉群支持解答OS及其应用的相关问题，同时还部分支持与阿里云产品打通的端侧问题
 
-* 基于AliOS Things提供了相关的应用示例，有关于OS的相关问题可在[github issue](https://github.com/alibaba/AliOS-Things/issues)提问，也可在[AliOS Things 技术交流钉钉群](https://img.alicdn.com/tfs/TB1wjmehmzqK1RjSZFjXXblCFXa-877-1268.jpg)进行技术交流。
-* 亦可查看AliOS Things支持的[更多开发板](https://github.com/alibaba/AliOS-Things/tree/master/board)
+* Develoeprkit开发板由[诺行](http://www.notioni.com)负责设计/生产/维护(**阿里提供OS，该板子处于[认证](https://github.com/AITC-LinkCertification/AITC-Manual/wiki/AliOS-Things%E8%AE%A4%E8%AF%81)过程中**)，部分常规开发板资料阿里同学整理如下：
+  > **注：** 遗留较多硬件问题且**诺行不愿**在开发板出厂时修复；开发板相关文档较乱；
+     * [板子硬件资源](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things-Developer-Kit-Hardware-Guide)  
+     * [硬件自测文档](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things-Developer-Kit-User-Basic-Operation-Guide)
+     * [开发板原理图和生产软件bin文件](http://www.notioni.com/#/source)，恢复出厂设置方法：烧录出厂bin文件  
+     * wifi模组固件升级，查看[这里](https://github.com/alibaba/AliOS-Things/wiki/wifi_upgrade_guide.md)确认是否需要升级
+     * 熟悉其他诺行提供的开发板资料，若遇到开发板问题请在诺行钉钉群at群主唐浩寻求帮助
 
+* AliOS Things支持该开发板，并提供相关的应用示例（如下），由于该开发板**尚未**通过阿里[认证](https://github.com/AITC-LinkCertification/AITC-Manual/wiki/AliOS-Things%E8%AE%A4%E8%AF%81)，亦可查看AliOS Things支持的[更多开发板](https://github.com/alibaba/AliOS-Things/tree/master/board)
+* 支持方式
+   * 诺行开发板钉钉群（**负责开发板所有内容**，请直接联系群主唐浩）：  
+        * 诺行开发板1~技术钉钉群，群号：23193725
+        * 诺行开发板2~技术钉钉群，群号：23167859
+   * AliOS Things钉钉群 (**负责OS及其相关应用支持**, 进群查看群公告)：
+        * AliOS Things-Banana技术交流钉钉群，群号：23130352
+        * AliOS Things-技术交流钉钉群，群号：11748797
 ## 板载硬件资源
 ![board_res](https://img.alicdn.com/tfs/TB17oEJgQvoK1RjSZFNXXcxMVXa-674-508.png)  
 **主要模块(自上而下):**
