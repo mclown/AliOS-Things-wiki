@@ -39,14 +39,10 @@
 * WIFI模组：BK7231。vendor:Beken  
 
 ## AliOS Things
-#### [AliOS Things文档入口](https://dev.iot.aliyun.com/doc/detail/aliosthings/3.0.13#index.html)
+#### 开发前提  
+ * [AliOS Things文档入口](https://dev.iot.aliyun.com/doc/detail/aliosthings/3.0.13#index.html)搭建环境  
+* 参考[cube安装使用](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things-uCube.zh) 和 [AliOS Things 2.1构建与配置](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things-Build-Configuration.zh)   
 #### 应用示例
-    >注：
-     完成上述环境搭建后会了解到下面的命令，其中example是指具体的demo名称  
-      * 编译命令 `aos make example@developerkit`   
-      * 烧录命令`aos upload example@developerkit`    
-
-
 | **Demos/Examples** | **Comments** | **Status** |
 | --------       | -------- | -------- |
 | helloworld       | 入门，串口打印log | [文档介绍](https://github.com/alibaba/AliOS-Things/tree/developer/example/helloworld) |
@@ -63,7 +59,7 @@
 | linkdevelop.device_ctrl | 设备控制  | developer分支，[文档](https://linkdevelop.aliyun.com/device-doc#aos-device_control.html)  |
 | linkdevelop.hmi  | 人机交互  | developer分支，[文档](https://linkdevelop.aliyun.com/device-doc#aos-hmi.html)  |
 
->Note: 'PCIe接口 + 外扩4G/NB等模块' 参考[这里](https://github.com/alibaba/AliOS-Things/wiki/developerkit_pcie_page)
+>Note: 诺行维护的'PCIe接口 + 外扩4G/NB等模块' 参考[这里](https://github.com/alibaba/AliOS-Things/wiki/developerkit_pcie_page)
 ## 附录
 
  
