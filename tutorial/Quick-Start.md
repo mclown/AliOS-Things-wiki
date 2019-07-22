@@ -41,9 +41,9 @@ $ pip install --upgrade aos-cube
 
 ```bash
 git clone https://github.com/alibaba/AliOS-Things.git
+```
 
 From AliOS Things Release 2.1，Use [Component Tool](https://aliosthings.iot.aliyun.com/aos/download) to get minimal code to local
-```
 
 ## Build and Run
 
