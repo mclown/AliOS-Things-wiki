@@ -35,6 +35,8 @@ $ pip install aos-cube
 git clone https://github.com/alibaba/AliOS-Things.git
 ```
 
+从AliOS Things Release 2.1开始，可以使用[Component Tool](https://aliosthings.iot.aliyun.com/aos/download) 获取最小代码集到本地，便于快速开发
+
 ## 编译运行
 
 AliOS Things 2.1及其后续版本(需要aos-cube 0.3.x)，更多配置参见[这里](AliOS-Things-Build-Configuration.zh)
