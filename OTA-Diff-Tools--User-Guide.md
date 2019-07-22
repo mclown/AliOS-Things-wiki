@@ -1,5 +1,4 @@
-简介
-AliOS Things OTA不仅提供云端一体化的基础的整包升级能力，还能提供更高阶的差分升级能力（对bin文件差分算法压缩率低于35%）。差分升级是将# AliOS Things OTA差分工具使用指南
+# AliOS Things OTA差分工具使用指南
 
 <a name="mPYI6"></a>
 # 简介
