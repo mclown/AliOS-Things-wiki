@@ -56,7 +56,7 @@ Please refer to [AliOS Things Technical Overview](AliOS-Things-Technical-Overvie
 - [Debugging](Debugging-Overview)
 - [uMesh Security](uMesh-Security)
 - [OTA Flash Partitions Overview](OTA-Flash-Partitions-Overview)
-- [OTA Diff Tools Overview](OTA-Diff-Tools-Overview)
+- [OTA Diff Tools User Guide](OTA-Diff-Tools--User-Guide)
 - [Coding Style](AliOS-Things-Coding-Style-Guide)
 - [AliOS Things 2.1 Build and Configuration](AliOS-Things-Build-Configuration.zh)
 
