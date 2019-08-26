@@ -26,8 +26,6 @@ $ pip install aos-cube
 >如遇网络问题可参考[这里](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things-Linux-Environment-Setup#%E5%AE%89%E8%A3%85python%E5%92%8Caos-cube)
 
 #### Windows中安装aos-cube
-可以直接使用我们准备好的一键安装包：http://p28phe5s5.bkt.clouddn.com/setup_windows.zip  
-也可以手动安装以下软件/工具:  
 - [Python 2](https://www.python.org/downloads/)
 - [Git (带 Git Bash)](https://git-scm.com/downloads)
 
