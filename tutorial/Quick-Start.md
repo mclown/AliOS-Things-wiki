@@ -6,7 +6,7 @@ If you are on Windows or Mac, maybe you'd like to turn directly to our [IDE](Ali
 ## Setup environment
 
 You can either try [Setup Script for Linux/Mac](https://alios-things-public.oss-cn-hangzhou.aliyuncs.com/setup_linux_osx.sh), or manually do steps below,  
-e.g. on a Ubuntu 16.04 LTS (Xenial Xerus) 64-bit PC
+Note: make sure on a Ubuntu 16.04 LTS (Xenial Xerus) 64-bit PC
 
 ```bash
 sudo apt-get install -y python
