@@ -5,8 +5,8 @@ If you are on Windows or Mac, maybe you'd like to turn directly to our [IDE](Ali
 
 ## Setup environment
 
-You can either try [Setup Script for Linux/Mac](https://alios-things-public.oss-cn-hangzhou.aliyuncs.com/setup_linux_osx.sh), or manually do steps below,  
-Note: make sure on a Ubuntu 16.04 LTS (Xenial Xerus) 64-bit PC
+Refer to [environment setup](AliOS-Things-Environment-Setup#1-system-environment-setup)
+or manually do steps below(Note: make sure on a Ubuntu 16.04 LTS (Xenial Xerus) 64-bit PC.)
 
 ```bash
 sudo apt-get install -y python
@@ -40,10 +40,10 @@ $ pip install --upgrade aos-cube
 ## Download Sources
 
 ```bash
-git clone https://github.com/alibaba/AliOS-Things.git
+git clone https://github.com/alibaba/AliOS-Things.git -b rel_xxx (xxx means version number, such as 3.0.0, 2.1.0 etc.)
 ```
 
-From AliOS Things Release 2.1，Use [Component Tool](https://aliosthings.iot.aliyun.com/aos/download) to get minimal code to local
+From AliOS Things Release 2.1，Use [Component Tool](https://aliosthings.iot.aliyun.com/aos/download) to get your minimal code to local
 
 ## Build and Run
 
