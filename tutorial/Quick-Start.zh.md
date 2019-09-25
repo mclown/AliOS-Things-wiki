@@ -3,12 +3,13 @@
 # 快速开始
 
 本文通过直接在一台 linux 机器上运行 AliOS Things 来带您快速体验它。  
-如果您在 Windows 或 Mac 上工作，也可以使用我们提供的[IDE](AliOS-Things-Studio)。
-
+如果您在 Windows 或 Mac 上工作，也可以使用我们提供的[IDE](AliOS-Things-Studio)或使用[docker环境](AliOS-Things-Docker-Environment-Setup)进行开发。
 
 ## 配置环境
 
-您可以尝试一键安装脚本[Setup Script for Linux/Mac](https://alios-things-public.oss-cn-hangzhou.aliyuncs.com/setup_linux_osx.sh),
+请直接前往[环境配置](AliOS-Things-Environment-Setup#1-system-environment-setup)选择适合自己开发方式的环境安装。
+
+您也可以尝试一键安装脚本[Setup Script for Linux/Mac](https://alios-things-public.oss-cn-hangzhou.aliyuncs.com/setup_linux_osx.sh),
 或者按以下命令手动安装依赖的软件包
 例：在一台 Ubuntu 16.04 LTS (Xenial Xerus) 64-bit PC 上
 ```bash
@@ -32,7 +33,7 @@ $ pip install aos-cube
 ## 下载代码
 
 ```bash
-git clone https://github.com/alibaba/AliOS-Things.git
+git clone https://github.com/alibaba/AliOS-Things.git -b rel_xxx (xxx指发布版本号，如3.0.0、2.1.0等)
 ```
 
 从AliOS Things Release 2.1开始，可以使用[Component Tool](https://aliosthings.iot.aliyun.com/aos/download) 获取最小代码集到本地，便于快速开发
