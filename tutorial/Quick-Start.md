@@ -1,12 +1,13 @@
 EN | [中文](Quick-Start.zh)
 
 This guide offers a glance at AliOS Things, by running directly on a linux machine.  
-If you are on Windows or Mac, maybe you'd like to turn directly to our [IDE](AliOS-Things-Studio).
+If you are on Windows or Mac, maybe you'd like to turn directly to our [IDE](AliOS-Things-Studio) or use [docker](AliOS-Things-Docker-Environment-Setup) to develop.
 
 ## Setup environment
 
-Refer to [environment setup](AliOS-Things-Environment-Setup#1-system-environment-setup)
-or manually do steps below(Note: make sure on a Ubuntu 16.04 LTS (Xenial Xerus) 64-bit PC.)
+Directly go to [environment setup](AliOS-Things-Environment-Setup#1-system-environment-setup) to choose your favorite environment.
+
+Maybe you can try [one-key setup package](https://alios-things-public.oss-cn-hangzhou.aliyuncs.com/setup_linux_osx.sh) or manually do steps below(Note: make sure on a Ubuntu 16.04 LTS (Xenial Xerus) 64-bit PC.)
 
 ```bash
 sudo apt-get install -y python
