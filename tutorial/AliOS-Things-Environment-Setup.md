@@ -8,6 +8,7 @@ EN | [中文](AliOS-Things-Environment-Setup.zh)
 # 1 System environment setup
 
 Please choose **one** appropriate environment in below table to setup:
+
 |Local Tool\Local OS|Linux|Windows|Mac|
 |------|--------|-------|-------|
 |AliOS Studio|[AliOS Studio](AliOS-Things-Studio)|[AliOS Studio](AliOS-Things-Studio)|[AliOS Studio](AliOS-Things-Studio)|
