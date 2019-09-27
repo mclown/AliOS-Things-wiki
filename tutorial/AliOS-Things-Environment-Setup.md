@@ -9,7 +9,7 @@ EN | [中文](AliOS-Things-Environment-Setup.zh)
 
 Please choose **one** appropriate environment in below table to setup:
 
-|Local Tool\Local OS|Linux|Windows|Mac|
+|Local Tool\OS|Linux|Windows|Mac|
 |------|--------|-------|-------|
 |AliOS Studio|[AliOS Studio](AliOS-Things-Studio)|[AliOS Studio](AliOS-Things-Studio)|[AliOS Studio](AliOS-Things-Studio)|
 |Keil|X|[Create Keil Project](https://dev.iot.aliyun.com/doc/detail/aliosthings?spm=a2c56.pc_iot_community_doc_center.0.0.432652065IZNUi#keilautogen.html)|X|
