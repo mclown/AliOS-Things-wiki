@@ -7,7 +7,7 @@
 
 ## 配置环境
 
-请直接前往[环境配置](AliOS-Things-Environment-Setup#1-system-environment-setup)选择适合自己开发方式的环境安装。
+请直接前往[环境配置文档页](AliOS-Things-Environment-Setup#1-system-environment-setup)选择适合自己开发方式的环境安装。
 
 您也可以尝试一键安装脚本[Setup Script for Linux/Mac](https://alios-things-public.oss-cn-hangzhou.aliyuncs.com/setup_linux_osx.sh),
 或者按以下命令手动安装依赖的软件包
