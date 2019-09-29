@@ -16,7 +16,7 @@ aos make linkkitapp@developerkit -c config /*配置app为linkkitapp board为deve
 
 输入命令：aos make menuconfig, 如下图：
 选择顺序：Middleware  Configuration  --->uAgent Configuration  --->-*- OTA Features  ---> OTA Features
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/109397/1567756100618-a820bf9a-26f9-4230-ad5e-e9ced0785e4d.png#align=left&display=inline&height=386&name=image.png&originHeight=771&originWidth=957&search=&size=98801&status=done&width=478.5)
+![image.png](https://gw.alicdn.com/tfs/TB1YE3ZhuL2gK0jSZFmXXc7iXXa-957-771.png)
 相关功能介绍如下：
   [ ]   OTA Secure Downloading Mode /*默认支持http下载，选中此项将支持https下载模式*/ 
   [ ]   OTA via uAgent /*默认不支持uAgent模式升级，选中支持uAgent方式升级*/
