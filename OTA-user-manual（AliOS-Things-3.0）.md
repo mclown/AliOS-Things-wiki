@@ -1,3 +1,4 @@
+## OTA使用手册（AliOS Things 3.0）
 ### 1 环境准备
 * 获取代码：[https://github.com/alibaba/AliOS-Things](https://github.com/alibaba/AliOS-Things) 分支：rel_3.0.0
 * 选定APP：在AliOS-Things/app/example/中linkkitapp和otaapp都支持OTA功能，本文以linkkitapp为例介绍;
