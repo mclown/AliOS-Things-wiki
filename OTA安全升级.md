@@ -1,7 +1,7 @@
 ## 1.介绍
 如下图流程所示:AliOS Things OTA提供云端一体化的安全升级服务，与阿里云安全服务器KPM直接对接，在云端完成秘钥及证书管理，数据签名，下发公钥到设备端，设备端完成固件签名验证，整个流程云端一体化提供服务，集成开发及操作非常简单。
 
-![](https://cdn.nlark.com/lark/0/2018/png/111302/1538638045436-2af5ccd3-330d-41dd-8892-39a8370480ed.png#align=left&display=inline&height=604&originHeight=654&originWidth=808&status=done&width=746)
+![](https://gw.alicdn.com/tfs/TB1Zo3IhuH2gK0jSZJnXXaT1FXa-940-809.png)
 ## 2.云端
 登录：[https://iot.console.aliyun.com/product](https://iot.console.aliyun.com/product)
 选择：监控运维---->固件升级---->安全升级；会弹出如下框图，选择对应要启用安全升级的产品，点击"安全升级"使状态为“开”，并点击“复制”，既可以获取公钥；
