@@ -33,24 +33,29 @@ aos make linkkitapp@developerkit -c config /*配置app为linkkitapp board为deve
 - **编译固件**
 
 编译命令：aos make 编译完成后，生成的固件在out/linkkitapp@developerkit/binary目录下，如下图：
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/109397/1567762750787-4d222f30-fc27-4916-8342-7a8c6cdb9f6e.png#align=left&display=inline&height=120&name=image.png&originHeight=240&originWidth=893&search=&size=317707&status=done&width=446.5)
+![image.png](https://gw.alicdn.com/tfs/TB1Pa71hET1gK0jSZFrXXcNCXXa-696-234.jpg)
+
 linkkitapp@developerkit.bin烧录到板子上，linkkitapp@developerkit_ota.bin用于上传云端，但上传云端固件的版本号要求高于烧录在板子上的固件版本号，因此需要生成一个高版本的固件；
 
 - **固件版本号更改及云端操作**
 
 更改build/build_rules/aos_target_config.mk文件中的app-1.0.0-$(CURRENT_TIME)为app-2.0.0-$(CURRENT_TIME)编译，如下图：
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/109397/1567762700674-3982565e-ab69-4483-bcfb-0eaac4dd4805.png#align=left&display=inline&height=371&name=image.png&originHeight=741&originWidth=929&search=&size=426472&status=done&width=464.5)
+![image.png](https://gw.alicdn.com/tfs/TB1MG34hAT2gK0jSZPcXXcKkpXa-929-741.png)
+
 复制如上图标记的版本号，登录[物联网平台](http://iot.console.aliyun.com/)平台，按如下图顺序操作
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/109397/1567763509630-6ba9b6ff-ba77-4fcf-9bc2-bef68fce2a9e.png#align=left&display=inline&height=418&name=image.png&originHeight=835&originWidth=1881&search=&size=488386&status=done&width=940.5)
-点击新增固件后，如下图：
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/109397/1567764446975-ed767a78-5f69-4a3c-b8cd-e5767d826870.png#align=left&display=inline&height=404&name=image.png&originHeight=808&originWidth=771&search=&size=312239&status=done&width=385.5)[链接]()[链接]()
+![image.png](https://gw.alicdn.com/tfs/TB19Ow1hEH1gK0jSZSyXXXtlpXa-1881-835.png)
 
+点击新增固件后，如下图:
 
-点击确定后，选择验证固件即可开始固件升级；升级结果可以点击“查看”获取详细结果；物联网平台的OTA操作可参考文档[阿里云物联网平台固件升级文档](https://help.aliyun.com/document_detail/58328.html) 智能生活平台的OTA操作可参考[阿里云智能生活开放平台固件升级文档](https://living.aliyun.com/doc#fxvw5z.html)；
+![image.png](https://gw.alicdn.com/tfs/TB1bgZ2hET1gK0jSZFrXXcNCXXa-771-808.png)
+
+点击确定后，选择验证固件即可开始固件升级；升级结果可以点击“查看”获取详细结果；物联网平台的OTA操作,可参考文档[阿里云物联网平台固件升级文档](https://help.aliyun.com/document_detail/58328.html); 智能生活平台的OTA操作,可参考[阿里云智能生活开放平台固件升级文档](https://living.aliyun.com/doc#fxvw5z.html)；
+
 注：在做OTA之前确保设备端已连接云端
-附件：
-1.安全升级
-[**OTA之安全升级**](https://yuque.antfin-inc.com/kqoe59/agqw03/nzqe07)
-2..差分升级
-[**AliOS Things OTA差分工具使用指南**](https://yuque.antfin-inc.com/kqoe59/wmmz9s/hp0c1c)
+
+附件:
+1. 安全升级
+* [**OTA安全升级**](https://yuque.antfin-inc.com/kqoe59/agqw03/nzqe07)
+2. 差分升级
+* [**AliOS Things OTA差分工具使用指南**](https://yuque.antfin-inc.com/kqoe59/wmmz9s/hp0c1c)
 
