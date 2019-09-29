@@ -1,10 +1,7 @@
 ### 1 环境准备
 获取代码：[https://github.com/alibaba/AliOS-Things](https://github.com/alibaba/AliOS-Things) 分支：rel_3.0.0
-
 选定APP：在AliOS-Things/app/example/中linkkitapp和otaapp都支持OTA功能，本文以linkkitapp为例介绍;
-
 选定board: 在AliOS-Things/board/中有很多板子都支持OTA功能，本文以developerkit为例介绍;
-
 选定云端平台：阿里云有两个平台支持AliOS Things OTA功能：[物联网平台](http://iot.console.aliyun.com/)或[智能生活开放平台](https://living.aliyun.com/)，本文以物联网平台为例介绍；
 ### 2 使用流程
 AliOS Things 支持Windows和Linux编译，本文以Linux编译环境为例：
