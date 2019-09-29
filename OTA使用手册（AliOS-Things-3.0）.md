@@ -18,8 +18,8 @@ aos make linkkitapp@developerkit -c config /*配置app为linkkitapp board为deve
 选择顺序：Middleware  Configuration  --->uAgent Configuration  --->-*- OTA Features  ---> OTA Features
 ![image.png](https://gw.alicdn.com/tfs/TB1YE3ZhuL2gK0jSZFmXXc7iXXa-957-771.png)
 相关功能介绍如下：
-[ ]   OTA Secure Downloading Mode /*默认支持http下载，选中此项将支持https下载模式*/ 
-[ ]   OTA via uAgent /*默认不支持uAgent模式升级，选中支持uAgent方式升级*/
++ [ ]   OTA Secure Downloading Mode /*默认支持http下载，选中此项将支持https下载模式*/ 
++ [ ]   OTA via uAgent /*默认不支持uAgent模式升级，选中支持uAgent方式升级*/
 [ ]   RSA Verify Support /*默认不支持安全升级，选中支持安全升级*/
 (5)   OTA Download Retry Count /*默认网络异常重试5次，可以根据需要自定义次数*/
 (20000) OTA Download Timeout(ms) /*OTA下载过程监控时间默认是20s,支持自定义*/
