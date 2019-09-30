@@ -206,3 +206,9 @@ sudo sysctl -p
 ##### SyntaxError: .vscode\launch.json: Unexpected token / in JSON at position 4378
 
 Don't add comments in `.vscode/tasks.json` or `.vscode/launch.json`.
+
+##### 调试模式，提示gdb is not signed
+
+![](https://img.alicdn.com/tfs/TB1pCaehKL2gK0jSZPhXXahvXXa-860-354.png)
+
+试试换个toolchain，或者删除这个toolchain，让aos-cube自己下载toolchain。
