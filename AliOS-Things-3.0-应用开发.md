@@ -20,6 +20,8 @@
 * `AliOS Things >= 3.0`。
 * `aos-cube >= 0.3.7`。
 
+> 更新aos-cube指令： `pip install -U aos-cube`。详细的环境安装文档请参考：[AliOS Things Environment Setup](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things-Environment-Setup#1-system-environment-setup)。
+
 ### 快速开始
 #### 第一步：下载AliOS Things 3.0源码
 
