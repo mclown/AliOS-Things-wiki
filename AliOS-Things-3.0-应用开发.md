@@ -6,7 +6,6 @@
     * [第一步：下载AliOS Things 3.0源码](#第一步下载alios-things-30源码)
     * [第二步：添加AOS_SDK_PATH环境变量](#第二步添加aos_sdk_path环境变量)
     * [第三步：AliOS Studio中创建应用工程](#第三步alios-studio中创建应用工程)
-* [如何添加组件](#如何添加组件)
 * [编译、烧录、调试](#编译烧录调试)
 * [其他说明](#其他说明)
 * [参考文档](#参考文档)
@@ -45,8 +44,6 @@
 应用工程中，AliOS Studio也支持编译、烧录、调试等功能。AliOS Studio的详细使用文档请参考[AliOS Studio](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things-Studio)。
 
 ### 其他说明
-
-#### 如何添加AOS_SDK_PATH环境变量
 
 ##### windows上添加AOS_SDK_PATH环境变量
 
