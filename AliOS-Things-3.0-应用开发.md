@@ -28,7 +28,7 @@
 
 #### 第二步：添加AOS_SDK_PATH环境变量
 
-添加`AOS_SDK_PATH`系统环境变量，指向AliOS Things 3.0源码路径，`aos-cube`会根据`AOS_SDK_PATH`环境变量来定位AliOS Things源码。不同系统添加环境变量的方式不同，详细添加方法见[如何添加AOS_SDK_PATH环境变量](#如何添加AOS_SDK_PATH环境变量)。
+添加`AOS_SDK_PATH`系统环境变量，指向AliOS Things 3.0源码路径，`aos-cube`会根据`AOS_SDK_PATH`环境变量来定位AliOS Things源码。不同系统添加环境变量的方式不同，详细添加方法见[如何添加AOS_SDK_PATH环境变量](#如何添加aos_sdk_path环境变量)。
 
 
 #### 第三步：AliOS Studio中创建应用工程
