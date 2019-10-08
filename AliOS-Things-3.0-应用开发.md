@@ -37,8 +37,6 @@
 
 ![](https://img.alicdn.com/tfs/TB18vKRhG67gK0jSZFHXXa9jVXa-1205-707.gif)
 
-### 如何添加组件
-
 ### 编译、烧录、调试
 
 应用工程中，AliOS Studio也支持编译、烧录、调试等功能。AliOS Studio的详细使用文档请参考[AliOS Studio](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things-Studio)。
