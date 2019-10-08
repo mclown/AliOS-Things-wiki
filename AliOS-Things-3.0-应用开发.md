@@ -43,6 +43,8 @@
 
 ### 其他说明
 
+### 如何添加AOS_SDK_PATH环境变量
+
 ##### windows上添加AOS_SDK_PATH环境变量
 
 详细方法请参考[windows系统如何设置添加环境变量？](https://jingyan.baidu.com/article/47a29f24610740c0142399ea.html)。
