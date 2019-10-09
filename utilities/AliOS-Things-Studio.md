@@ -6,19 +6,19 @@
 	* [安装 aos-cube](#安装-aos-cube)
 * [使用](#使用)
 	* [AliOS-Studio 工具栏](#alios-studio-工具栏)
-	* [编译 - Build](#编译-build)
-	* [烧录 - Upload](#烧录-upload)
-	* [串口监控 - Monitor](#串口监控-monitor)
-	* [调试 - Debug](#调试-debug)
+	* [编译 - Build](#编译---build)
+	* [烧录 - Upload](#烧录---upload)
+	* [串口监控 - Monitor](#串口监控---monitor)
+	* [调试 - Debug](#调试---debug)
 * [更多说明](#更多说明)
 	* [AliOS Studio 命令列表](#alios-studio-命令列表)
 	* [AliOS Studio 快捷键](#alios-studio-快捷键)
 * [配置文件说明](#配置文件说明)
-	* [launch.json](#launch.json)
-	* [settings.json](#settings.json)
-	* [tasks.json](#tasks.json)
+	* [launch.json](#launchjson)
+	* [settings.json](#settingsjson)
+	* [tasks.json](#tasksjson)
 * [其他功能](#其他功能)
-	* [AliOS Things 3.0 应用开发](#alios-things-3.0-应用开发)
+	* [AliOS Things 3.0 应用开发](#alios-things-30-应用开发)
 	* [鼠标移到AliOS Things的API上会显示API说明链接](#鼠标移到alios-things的api上会显示api说明链接)
 	* [转换TSL json文件为C代码文件](#转换tsl-json文件为c代码文件)
 * [附录](#附录)
@@ -98,7 +98,7 @@
 
 2. 点击下方工具栏插头图标打开串口。第一次连接会提示填写串口设备名和波特率，再次点击可以看到串口输出，同时也可以在这里输入命令进行交互。
 
-> 这里如果打开串口出错，请注意你的用户是否有串口访问权限，如果有权限问题请参考[aos-cube常见问题](./doc.faq#aos-cube-faq)。
+> 这里如果打开串口出错，请注意你的用户是否有串口访问权限。
 
 #### 调试 - Debug
 
@@ -119,7 +119,7 @@
 使用调试功能，最好设置优化等级为`-Og`或者`-O0`，否则会出现函数跳转异常、单步调试异常、变量optimize-out等问题。设置优化等级：
 
 - AliOS Things 2.1版本以前：手动更改`build/aos_toolchain_arm-none-eabi.mk` 中的`COMPILER_SPECIFIC_OPTIMIZED_CFLAGS`变量为-Og 或者 -O0。
-- AliOS Things 2.1版本及以后：使用命令`aos make BUILD_TYPE=debug`即可。你也可以参考[配置项：task.json](#tasks.json)中的说明，更改默认的Build选项。
+- AliOS Things 2.1版本及以后：使用命令`aos make BUILD_TYPE=debug`即可。你也可以参考[配置项：task.json](#tasksjson)中的说明，更改默认的Build选项。
 
 ### 更多说明
 
@@ -227,7 +227,7 @@ launch.json 中的关键配置项如下如所示：
 | 名称 | 说明 |
 | --- | --- |
 | program | gcc编译出来的elf文件，位于`out/app@board/binary/app@board.elf` |
-| miDebuggerServerAddress 和<br />setupCommands | 配置gdb的连接端口，不同的gdb server使用不同的端口，请参考[gdb server列表](./gdb-server)。 |
+| miDebuggerServerAddress 和<br />setupCommands | 配置gdb的连接端口，不同的gdb server使用不同的端口 |
 | miDebuggerPath | gdb执行文件路径 |
 
 #### settings.json
@@ -237,12 +237,10 @@ launch.json 中的关键配置项如下如所示：
 ```json
 {
     "aliosStudio.inner.yosBin": "aos",
-    "aliosStudio.hardware.board": "cy8ckit-149",
+    "aliosStudio.hardware.board": "developerkit",
     "aliosStudio.name": "helloworld",
     "aliosStudio.aosVersion": "2.1.0",
-    "C_Cpp.default.browse.databaseFilename": "${workspaceRoot}/.vscode/.TAGS.AOS.DB",
-    "aliosStudio.iot.deviceName": "test_01",
-    "aliosStudio.iot.productKey": "a1MZxOdcBnO"
+    "C_Cpp.default.browse.databaseFilename": "${workspaceRoot}/.vscode/.TAGS.AOS.DB"
 }
 ```
 
@@ -253,10 +251,9 @@ launch.json 中的关键配置项如下如所示：
 | --- | --- |
 | `yosBin` | - |
 | `hardware.board` | 编译的目标开发板 |
+| `name` | 编译的目标应用 |
 | `aosVersion` | AliOS Things 2.1.0版本及以后新增该配置选项，标志当前代码的版本号。 |
 | `C_Cpp.default.browse.databaseFilename` | 配置符号表数据库保存路径 |
-| `iot.deviceName` | 一键OTA功能：设置deviceName |
-| `iot.productKey` | 一键OTA功能： 设置productKey |
 
 #### tasks.json
 
@@ -272,7 +269,7 @@ tasks.json 用来描述当前支持哪些tasks，比如点击工具栏的编译�
 | alios-studio: Upload | 上传代码到开发板 | ![](https://img.alicdn.com/tfs/TB1gwqakNTpK1RjSZR0XXbEwXXa-25-22.png#width=) |
 | alios-studio: Serial Monitor | 启动串口工具 | ![](https://img.alicdn.com/tfs/TB1oSSckHvpK1RjSZPiXXbmwXXa-25-22.png#width=) |
 | alios-studio: Clean | 清除代码目标文件 | ![](https://img.alicdn.com/tfs/TB1_PN_kSrqK1RjSZK9XXXyypXa-25-22.png#width=) |
-| alios-studio: OTA | [一键OTA功能](./doc.components.middleware.uagent.udev) |  |
+| alios-studio: OTA | 一键OTA功能 |  |
 
 当然，你也可以在tasks.json中添加自己的任务，然后依次点击vscode菜单栏的Terminal > Run Task... ，即可看到你配置的导出IAR工程的task：<br />
 ![](https://img.alicdn.com/tfs/TB1wujGH6TpK1RjSZKPXXa3UpXa-718-288.png#width=)
