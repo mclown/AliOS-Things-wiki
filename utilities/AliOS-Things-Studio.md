@@ -64,9 +64,11 @@
 #### AliOS-Studio 工具栏
 
 `AliOS Studio`的主要功能都集中在vscode**下方工具栏**中，小图标从左至右功能分别是`创建应用工程` `编译` `烧录` `串口工具`  `清除`。
-> **注：**当用vscode打开了AliOS Things源码或者应用工程时，才会显示全部的工具图标。
+> **注：** 当用vscode打开了AliOS Things源码或者应用工程时，才会显示全部的工具图标。
 
-![|480x480](https://img.alicdn.com/tfs/TB1mePriEH1gK0jSZSyXXXtlpXa-998-76.jpg)
+<div align="center">
+<img src="https://img.alicdn.com/tfs/TB1mePriEH1gK0jSZSyXXXtlpXa-998-76.jpg" width="480">
+</div>
 
 左侧的`helloworld@developerkit`是编译目标，格式遵循`应用名字@目标板名字`的规则，点击它可以依次选择应用和目标板。
 
@@ -125,10 +127,8 @@
 
 按 `Ctrl-Shift-P` 打开vscode的命令面板，输入 `alios-studio`可以看到`AliOS Studio`支持的命令：
 
+![](https://img.alicdn.com/tfs/TB1lEW_MZbpK1RjSZFyXXX_qFXa-1439-838.png)
 
-<div align="center">
-<img src="https://img.alicdn.com/tfs/TB1lEW_MZbpK1RjSZFyXXX_qFXa-1439-838.png" width="240">
-</div >
 命令说明：
 
 | 命令 | 描述 | 工具栏 |
@@ -267,7 +267,7 @@ tasks.json 用来描述当前支持哪些tasks，比如点击工具栏的编译�
 ##### tasks.json的任务说明
 
 | label | 说明 | 工具栏 |
-| --- | --- | --- |
+| --- | --- |:---:|
 | alios-studio: Make | 编译代码 | ![](https://img.alicdn.com/tfs/TB14LGAkNnaK1RjSZFBXXcW7VXa-25-22.png#width=) |
 | alios-studio: Upload | 上传代码到开发板 | ![](https://img.alicdn.com/tfs/TB1gwqakNTpK1RjSZR0XXbEwXXa-25-22.png#width=) |
 | alios-studio: Serial Monitor | 启动串口工具 | ![](https://img.alicdn.com/tfs/TB1oSSckHvpK1RjSZPiXXbmwXXa-25-22.png#width=) |
