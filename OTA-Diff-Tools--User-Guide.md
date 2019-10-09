@@ -20,6 +20,6 @@ linkkitapp@mk3060 –c config<br />##### aos make<br />4). 使用如下AliOS Thi
 new.bin<br />5). 执行如下命令行将差分包文件diff.bin和老版本old.bin文件还原生成新版本文件new1.bin, 将还原的new1.bin和原始的new.bin文件进行比对一致说明生成差分包正确（**这里是模拟板子运行，注意还原校验的原始固件不能超过8M**）。<br />##### aos ota patch old.bin
 new1.bin diff.bin
 
-# 3. 本地压缩工具
+# 4. 本地压缩工具
 使用如下工具命令生成压缩bin文件ota.bin.xz,工具在目录build/cmd/win32 or linux32 or linux64
 ######  $(XZ) -f --lzma2=dict=32KiB --check=crc32 -k ota.bin 
