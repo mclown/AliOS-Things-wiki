@@ -155,6 +155,14 @@ AliOS Studio也支持一键安装aos-cube，如下图所示：
 
 ## 其他功能
 
+### AliOS Things 3.0 应用开发
+
+AliOS Things 3.0版本于9月27日在云栖大会正式发布，在新版本中带来了全新的应用开发框架，帮助用户快速构建自己的应用。使用户可以更专注于自身应用的开发。开发者可以在AliOS Studio中快速的创建应用工程：
+
+> 要求 `AliOS Things >= 3.0.0` 和 `aos-cube >= 0.3.7`。
+
+![](https://img.alicdn.com/tfs/TB18vKRhG67gK0jSZFHXXa9jVXa-1205-707.gif)
+
 ### 鼠标移到AliOS Things的API上会显示API说明链接
 
 为了方便开发者尽快熟悉AliOS Things API，当鼠标移到AliOS Things的API上就会显示`查看AliOSThings 官方API文档`：
