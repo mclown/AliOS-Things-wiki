@@ -21,5 +21,5 @@ new.bin<br />5). 执行如下命令行将差分包文件diff.bin和老版本old.
 new1.bin diff.bin
 
 # 3. 本地压缩工具
-使用如下工具命令生成压缩bin文件ota.bin.xz
+使用如下工具命令生成压缩bin文件ota.bin.xz,工具在目录build/cmd/win32 or linux32 or linux64
 ######  $(XZ) -f --lzma2=dict=32KiB --check=crc32 -k ota.bin 
