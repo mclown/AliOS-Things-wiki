@@ -178,7 +178,7 @@
 
 ### 配置文件说明
 
-在AliOS Things源码中，有3个json文件分别配置不一样的功能：
+在AliOS Things源码或者应用工程中，都有`.vscode/`目录，该目录下面都有3个json文件，这些json文件分别配置不一样的功能：
 
 - `launch.json` - 设置调试参数
 - `settings.json` - AliOS Studio配置选项
