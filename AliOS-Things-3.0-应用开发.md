@@ -35,7 +35,20 @@ AliOS Things 3.0版本于9月27日在云栖大会正式发布，在新版本中�
 
 #### 第三步：AliOS Studio中创建应用工程
 
-创建示例：
+在vscode中点击AliOS Studio提供的“+”按钮新建项目（按钮位于vscode左下角的状态栏），AliOS Studio依次会提示输入`项目名称` > `项目存放路径` > `开发板选择`，之后就会在你指定的路径中生成最简单的应用工程：
+
+```bash
+.
+├── .aos               # AliOS Things 3.0 应用工程描述
+├── .vscode            # AliOS Studio 配置文件
+├── Config.in          # Menuconfig 配置文件
+├── README.md          # 应用说明文档
+├── aos.mk             # 编译文件
+├── app_main.c         # 应用示例代码
+└── k_app_config.h     # 内核配置
+```
+
+完整的创建示例：
 
 ![](https://img.alicdn.com/tfs/TB18vKRhG67gK0jSZFHXXa9jVXa-1205-707.gif)
 
