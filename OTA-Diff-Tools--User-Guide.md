@@ -2,7 +2,7 @@
 
 <a name="mPYI6"></a>
 # 简介
-AliOS Things OTA不仅提供云端一体化的基础的整包升级能力，还能提供更高阶的差分升级能力（对bin文件差分算法压缩率低于35%）。差分升级是将老版本和新版本取差异部分进行增量升级，可以极大的减少下载包的流量，同时能节省存储升级固件的ROM存储空间。<br /> <br />此文档针使用AliOS Things OTA的芯片开发人员，版本基线为github：[https://github.com/alibaba/AliOS-Things.git](https://github.com/alibaba/AliOS-Things.git) 分支：rel_2.1.1。<br /> 
+AliOS Things OTA不仅提供云端一体化的基础的整包升级能力，还能提供更高阶的差分升级能力（对bin文件差分算法压缩率低于35%）。差分升级是将老版本和新版本取差异部分进行增量升级，可以极大的减少下载包的流量，同时能节省存储升级固件的ROM存储空间。<br /> <br />此文档针使用AliOS Things OTA的芯片开发人员，版本基线为github：[https://github.com/alibaba/AliOS-Things.git](https://github.com/alibaba/AliOS-Things.git) 分支：rel_3.0.0。<br /> 
 <a name="D7o0z"></a>
 # 1. 差分升级基本原理
 ![image.png](https://img.alicdn.com/tfs/TB1xmMQa4D1gK0jSZFKXXcJrVXa-553-341.png)<br /> 
