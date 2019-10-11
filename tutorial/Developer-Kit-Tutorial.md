@@ -1,3 +1,16 @@
+## IoT案例
+### 1, 基于**Developer Kit开发板**快速搭建'实时查询天气'的物联网应用。
+* 技术创新点：
+   * QR设备配网、钉钉推送设备上线通知
+   * 轻量级嵌入式设备 + 阿里云API云市场的天气API
+   * 开发简单上手快、思路/方案拓展性强
+* 参考[快速搭建文档](https://yq.aliyun.com/articles/720391)  
+* 效果展示  
+  ![demo_show](https://img.alicdn.com/tfs/TB13NF4iQL0gK0jSZFAXXcA9pXa-296-390.png)
+
+    
+   
+
 ## 注意
 > 本文主要介绍**Developer Kit开发板**相关内容，如果使用**Starter kit开发板**请查看[这里](https://github.com/alibaba/AliOS-Things/wiki/Starter-Kit-Tutorial.zh).  
 ## 介绍
