@@ -65,9 +65,9 @@ $ docker container start -ia alios-docker
 ### 适用场景二：代码编辑和调试在mac，编译和烧录在docker下进行
 与mac场景一比较，需要建立共享目录，完成代码在两种环境中的共享。
 #### 下载docker工具
-同上
+同Mac适用场景一
 #### 获取docker镜像
-同上
+同Mac适用场景一
 #### 获取代码
 推荐[组件化工具](https://aliosthings.iot.aliyun.com/aos/download)获取，将zip包解压到本机某个目录下， 如 /Users/xxx/alios
 #### 启动docker
@@ -115,9 +115,9 @@ $ docker container start -ia alios-docker
 ### 适用场景二：代码编辑和调试在windows，编译和烧录在docker下进行
 与场景一比较，需要建立共享目录，完成代码在两种环境中的共享。
 #### 下载docker工具
-同上
+同Windows适用场景一
 #### 获取docker镜像
-同上
+同Windows适用场景一
 #### 获取代码
 推荐[组件化工具](https://aliosthings.iot.aliyun.com/aos/download)获取，将zip包解压到本机某个目录下， 如d:\work
 #### 启动docker, 带目录共享能力
