@@ -89,7 +89,7 @@
 
 - [https://github.com/alibaba/AliOS-Things/tree/master/build/site_scons](https://github.com/alibaba/AliOS-Things/tree/master/build/site_scons)
 
-- [让你的开发板支持AliOS Studio烧录](appnote.aos-upload)
+- [让你的开发板支持AliOS Studio烧录](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things%E5%BC%80%E5%8F%91%EF%BC%9A%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%BC%80%E5%8F%91%E6%9D%BF%E6%94%AF%E6%8C%81AliOS-Studio%E7%83%A7%E5%BD%95)
 
 
 #### 串口监控 - Monitor
@@ -110,7 +110,7 @@
 
 - [https://github.com/alibaba/AliOS-Things/tree/master/build/site_scons](https://github.com/alibaba/AliOS-Things/tree/master/build/site_scons)。
 
-- [让你的开发板支持AliOS Studio烧录](appnote.aos-debug)
+- [让你的开发板支持AliOS Studio烧录](https://github.com/alibaba/AliOS-Things/wiki/AliOS-Things%E5%BC%80%E5%8F%91%EF%BC%9A%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%BC%80%E5%8F%91%E6%9D%BF%E6%94%AF%E6%8C%81AliOS-Studio%E8%B0%83%E8%AF%95)
 
 参考视频：[使用 AliOS Studio 开始 AliOS Things 调试](http://v.youku.com/v_show/id_XMzU3OTE5ODE1Ng==.html)。
 
