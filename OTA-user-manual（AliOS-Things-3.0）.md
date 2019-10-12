@@ -56,7 +56,7 @@ linkkitapp@developerkit.bin烧录到板子上，linkkitapp@developerkit_ota.bin�
 
 附件:
 1. 安全升级
-* [**OTA安全升级**](https://github.com/alibaba/AliOS-Things/wiki/OTA%E5%AE%89%E5%85%A8%E5%8D%87%E7%BA%A7)
+* [**OTA安全升级**](https://github.com/alibaba/AliOS-Things/wiki/Security-OTA)
 2. 差分升级
 * [**AliOS Things OTA差分工具使用指南**](https://github.com/alibaba/AliOS-Things/wiki/OTA-Diff-Tools--User-Guide)
 
