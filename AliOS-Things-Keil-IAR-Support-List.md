@@ -23,6 +23,7 @@
 |15|Cortex-M4|stm32f4xx_cube|stm32f411re-nucleo|helloworld|✔|✔|
 |16|Cortex-M4|stm32f4xx_cube|stm32f412zg-nucleo|helloworld|✔|✔|
 |17|Cortex-M4|stm32f4xx_cube|stm32f429zi-nucleo|helloworld|✔|✔|
+|17|Cortex-M4|stm32f4xx_cube|stm32f429zi-nucleo|linkkitapp|✔|
 |18|Cortex-M4|stm32I4xx_cube|stm32l432kc-nucleo|helloworld|✔|✔|
 |19|Cortex-M4|stm32I4xx_cube|stm32l476rg-nucleo |helloworld|✔|✔|
 |20|Cortex-M4|stm32I4xx_cube|stm32l476rg-nucleo |blink|✔|✔|
